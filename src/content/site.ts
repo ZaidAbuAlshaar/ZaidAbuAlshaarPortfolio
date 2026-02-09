@@ -17,7 +17,7 @@ export const siteConfig = {
     en: "Amman, Jordan",
     ar: "عمّان، الأردن",
   },
-  siteUrl: "https://placeholder-domain.com",
+  siteUrl: "https://zaidabualshaar.github.io/ZaidAbuAlshaarPortfolio",
   social: {
     github: "https://github.com/PLACEHOLDER_GITHUB",
     linkedin: "https://linkedin.com/in/PLACEHOLDER_LINKEDIN",
