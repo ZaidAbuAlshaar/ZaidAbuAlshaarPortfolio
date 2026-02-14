@@ -1,175 +1,130 @@
 export interface Achievement {
   id: string;
-  type: "certification" | "course" | "competition" | "award";
   title: { en: string; ar: string };
   issuer: { en: string; ar: string };
-  date: string;
   description: { en: string; ar: string };
-  credential?: string;
-  image?: string;
+  year: number;
+  category: 'award' | 'certification' | 'experience';
 }
 
 export const achievements: Achievement[] = [
+  // ─── Awards & Competitions ───
   {
-    id: "cert-aws-solutions-architect",
-    type: "certification",
-    title: {
-      en: "AWS Solutions Architect – Associate",
-      ar: "مهندس حلول AWS – مشارك",
-    },
-    issuer: {
-      en: "Amazon Web Services",
-      ar: "خدمات أمازون ويب",
-    },
-    date: "2024-01",
+    id: 'award-ieee-hackathon',
+    title: { en: '1st Place — Sustainable Tech Hackathon', ar: 'المركز الأول — هاكاثون التقنيات المستدامة' },
+    issuer: { en: 'IEEE, Jordan', ar: 'IEEE، الأردن' },
     description: {
-      en: "Validated expertise in designing distributed systems and architectures on AWS cloud platform.",
-      ar: "خبرة معتمدة في تصميم الأنظمة الموزعة والبنى على منصة AWS السحابية.",
+      en: 'Won first place at the IEEE Sustainable Technology Hackathon 2025 in Jordan, developing an innovative tech solution addressing sustainability challenges.',
+      ar: 'فزت بالمركز الأول في هاكاثون IEEE للتقنيات المستدامة 2025 في الأردن، بتطوير حل تقني مبتكر يعالج تحديات الاستدامة.',
     },
-    credential: "PLACEHOLDER_CREDENTIAL_URL",
-    image: "/placeholders/cert-1.png",
+    year: 2025,
+    category: 'award',
   },
   {
-    id: "cert-tensorflow-developer",
-    type: "certification",
-    title: {
-      en: "TensorFlow Developer Certificate",
-      ar: "شهادة مطور TensorFlow",
-    },
-    issuer: {
-      en: "Google",
-      ar: "جوجل",
-    },
-    date: "2023-09",
+    id: 'award-palm-dates',
+    title: { en: '1st Place — Best Innovation Award (Palm & Dates Sector)', ar: 'المركز الأول — جائزة أفضل ابتكار (قطاع النخيل والتمور)' },
+    issuer: { en: 'National Competition, Jordan', ar: 'مسابقة وطنية، الأردن' },
     description: {
-      en: "Demonstrated proficiency in building and training neural networks using TensorFlow.",
-      ar: "إثبات الكفاءة في بناء وتدريب الشبكات العصبية باستخدام TensorFlow.",
+      en: 'Awarded 1st place for the Best Innovation in the Palm & Dates sector at a national competition in Jordan, 2025.',
+      ar: 'حصلت على المركز الأول لأفضل ابتكار في قطاع النخيل والتمور في مسابقة وطنية بالأردن، 2025.',
     },
-    credential: "PLACEHOLDER_CREDENTIAL_URL",
-    image: "/placeholders/cert-2.png",
+    year: 2025,
+    category: 'award',
   },
   {
-    id: "course-deep-learning-specialization",
-    type: "course",
-    title: {
-      en: "Deep Learning Specialization",
-      ar: "تخصص التعلم العميق",
-    },
-    issuer: {
-      en: "Coursera – DeepLearning.AI",
-      ar: "كورسيرا – DeepLearning.AI",
-    },
-    date: "2023-06",
+    id: 'award-data-cleaning',
+    title: { en: '2nd Place — Data Cleaning Competition', ar: 'المركز الثاني — مسابقة تنظيف البيانات' },
+    issuer: { en: 'IEEE, Jordan', ar: 'IEEE، الأردن' },
     description: {
-      en: "Completed 5-course specialization covering neural networks, optimization, CNNs, RNNs, and sequence models.",
-      ar: "إكمال تخصص من 5 دورات يغطي الشبكات العصبية والتحسين و CNNs و RNNs ونماذج التسلسل.",
+      en: 'Secured 2nd place in the IEEE Data Cleaning Competition 2025, showcasing advanced data wrangling and analysis skills.',
+      ar: 'حصلت على المركز الثاني في مسابقة IEEE لتنظيف البيانات 2025، مستعرضًا مهارات متقدمة في معالجة البيانات وتحليلها.',
     },
-    credential: "PLACEHOLDER_CREDENTIAL_URL",
-    image: "/placeholders/course-1.png",
+    year: 2025,
+    category: 'award',
+  },
+
+  // ─── Certifications ───
+  {
+    id: 'cert-wordpress',
+    title: { en: 'WordPress Development', ar: 'تطوير ووردبريس' },
+    issuer: { en: 'Udemy', ar: 'يوديمي' },
+    description: {
+      en: 'Comprehensive WordPress development course covering theme building, plugin development, and site optimization.',
+      ar: 'دورة شاملة في تطوير ووردبريس تغطي بناء القوالب وتطوير الإضافات وتحسين المواقع.',
+    },
+    year: 2024,
+    category: 'certification',
   },
   {
-    id: "course-fullstack-open",
-    type: "course",
-    title: {
-      en: "Full Stack Open",
-      ar: "تطوير الويب المتكامل المفتوح",
-    },
-    issuer: {
-      en: "University of Helsinki",
-      ar: "جامعة هلسنكي",
-    },
-    date: "2023-03",
+    id: 'cert-unity',
+    title: { en: 'Unity Game Development', ar: 'تطوير الألعاب بـ Unity' },
+    issuer: { en: 'Online Course', ar: 'دورة إلكترونية' },
     description: {
-      en: "Comprehensive modern web development course covering React, Node.js, GraphQL, TypeScript, and CI/CD.",
-      ar: "دورة شاملة في تطوير الويب الحديث تغطي React و Node.js و GraphQL و TypeScript و CI/CD.",
+      en: 'Game development course covering Unity engine, C# scripting, 3D environments, and interactive gameplay mechanics.',
+      ar: 'دورة تطوير ألعاب تغطي محرك Unity وبرمجة C# والبيئات ثلاثية الأبعاد وآليات اللعب التفاعلية.',
     },
-    credential: "PLACEHOLDER_CREDENTIAL_URL",
-    image: "/placeholders/course-2.png",
+    year: 2024,
+    category: 'certification',
   },
   {
-    id: "competition-hackathon-winner",
-    type: "competition",
-    title: {
-      en: "National AI Hackathon – 1st Place",
-      ar: "هاكاثون الذكاء الاصطناعي الوطني – المركز الأول",
-    },
-    issuer: {
-      en: "Tech Innovation Hub",
-      ar: "مركز الابتكار التقني",
-    },
-    date: "2024-03",
+    id: 'cert-english-b2',
+    title: { en: 'English Proficiency — B2 Level', ar: 'إتقان اللغة الإنجليزية — مستوى B2' },
+    issuer: { en: 'Language Certification', ar: 'شهادة لغة' },
     description: {
-      en: "Won first place for developing an AI-driven solution for healthcare accessibility in underserved communities.",
-      ar: "الفوز بالمركز الأول لتطوير حل مدعوم بالذكاء الاصطناعي لتحسين الوصول للرعاية الصحية في المجتمعات المحرومة.",
+      en: 'Certified English language proficiency at B2 (Upper-Intermediate) level, enabling professional communication in global projects.',
+      ar: 'شهادة إتقان اللغة الإنجليزية بمستوى B2 (فوق المتوسط)، تمكّن من التواصل المهني في المشاريع العالمية.',
     },
-    image: "/placeholders/competition-1.png",
+    year: 2024,
+    category: 'certification',
   },
   {
-    id: "competition-coding-challenge",
-    type: "competition",
-    title: {
-      en: "Regional Coding Championship – Top 10",
-      ar: "بطولة البرمجة الإقليمية – أفضل 10",
-    },
-    issuer: {
-      en: "ACM ICPC Regional",
-      ar: "ACM ICPC الإقليمية",
-    },
-    date: "2023-11",
+    id: 'cert-toefl',
+    title: { en: 'TOEFL Preparation', ar: 'التحضير لاختبار التوفل' },
+    issuer: { en: 'Self-study Program', ar: 'برنامج دراسة ذاتية' },
     description: {
-      en: "Placed in the top 10 among 200+ teams in the regional competitive programming championship.",
-      ar: "الحصول على مركز ضمن أفضل 10 من بين أكثر من 200 فريق في بطولة البرمجة التنافسية الإقليمية.",
+      en: 'Completed intensive TOEFL preparation covering academic reading, writing, listening, and speaking skills.',
+      ar: 'إتمام التحضير المكثف لاختبار التوفل شاملاً مهارات القراءة والكتابة والاستماع والتحدث الأكاديمية.',
     },
-    image: "/placeholders/competition-2.png",
+    year: 2024,
+    category: 'certification',
   },
   {
-    id: "award-innovation-excellence",
-    type: "award",
-    title: {
-      en: "Innovation Excellence Award",
-      ar: "جائزة التميز في الابتكار",
-    },
-    issuer: {
-      en: "University of Jordan",
-      ar: "الجامعة الأردنية",
-    },
-    date: "2024-06",
+    id: 'cert-selflearn',
+    title: { en: 'Self-Learning — Software Dev & Digital Arts', ar: 'تعلّم ذاتي — تطوير البرمجيات والفنون الرقمية' },
+    issuer: { en: 'Self-directed Learning', ar: 'تعلّم ذاتي' },
     description: {
-      en: "Recognized for outstanding innovation in capstone project combining AI with extended reality applications.",
-      ar: "تكريم للابتكار المتميز في مشروع التخرج الذي يجمع بين الذكاء الاصطناعي وتطبيقات الواقع الممتد.",
+      en: 'Continuous self-learning in modern software development frameworks, AI tools, and digital arts including UI/UX design and 3D modeling.',
+      ar: 'تعلّم ذاتي مستمر في أطر تطوير البرمجيات الحديثة وأدوات الذكاء الاصطناعي والفنون الرقمية بما في ذلك تصميم واجهات المستخدم والنمذجة ثلاثية الأبعاد.',
     },
-    image: "/placeholders/award-1.png",
+    year: 2024,
+    category: 'certification',
+  },
+
+  // ─── Experience Highlights ───
+  {
+    id: 'exp-ieee',
+    title: { en: 'IEEE Student Branch Vice Chair', ar: 'نائب رئيس فرع IEEE الطلابي' },
+    issuer: { en: 'University of Petra', ar: 'جامعة البتراء' },
+    description: {
+      en: 'Leading technical initiatives at the IEEE Student Branch, organizing hackathons and workshops, mentoring peers in web development and AI.',
+      ar: 'قيادة المبادرات التقنية في فرع IEEE الطلابي، تنظيم الهاكاثونات وورش العمل، وإرشاد الزملاء في تطوير الويب والذكاء الاصطناعي.',
+    },
+    year: 2025,
+    category: 'experience',
   },
   {
-    id: "award-open-source-contributor",
-    type: "award",
-    title: {
-      en: "Open Source Contributor of the Year",
-      ar: "مساهم العام في المصادر المفتوحة",
-    },
-    issuer: {
-      en: "Local Developer Community",
-      ar: "مجتمع المطورين المحلي",
-    },
-    date: "2024-02",
+    id: 'exp-vr-club',
+    title: { en: 'Founding Member — VR & Gaming Club', ar: 'عضو مؤسس — نادي الواقع الافتراضي والألعاب' },
+    issuer: { en: 'University of Petra', ar: 'جامعة البتراء' },
     description: {
-      en: "Awarded for significant contributions to open-source projects in the local developer community.",
-      ar: "جائزة للمساهمات الكبيرة في مشاريع المصادر المفتوحة في مجتمع المطورين المحلي.",
+      en: 'Co-founded the VR & Gaming Club at the University of Petra, building a community for immersive technology enthusiasts and game developers.',
+      ar: 'شريك مؤسس لنادي الواقع الافتراضي والألعاب في جامعة البتراء، بناء مجتمع لعشاق التقنيات الغامرة ومطوري الألعاب.',
     },
-    image: "/placeholders/award-2.png",
+    year: 2024,
+    category: 'experience',
   },
 ];
 
-export const achievementTypeLabels: Record<Achievement["type"], { en: string; ar: string }> = {
-  certification: { en: "Certifications", ar: "الشهادات" },
-  course: { en: "Courses", ar: "الدورات" },
-  competition: { en: "Competitions", ar: "المسابقات" },
-  award: { en: "Awards & Trophies", ar: "الجوائز والكؤوس" },
-};
-
-export const achievementTypeIcons: Record<Achievement["type"], string> = {
-  certification: "award",
-  course: "book-open",
-  competition: "trophy",
-  award: "medal",
-};
+export function getAchievementsByCategory(category: Achievement['category']) {
+  return achievements.filter((a) => a.category === category);
+}

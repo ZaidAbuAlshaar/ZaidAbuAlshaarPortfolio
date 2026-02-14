@@ -1,248 +1,206 @@
 export interface Project {
   slug: string;
   title: { en: string; ar: string };
-  summary: { en: string; ar: string };
   description: { en: string; ar: string };
+  summary: { en: string; ar: string };
   tags: string[];
   techStack: string[];
-  category: "ai" | "fullstack" | "xr" | "mobile" | "data" | "other";
-  images: {
-    thumbnail: string;
-    gallery: string[];
-  };
-  links: {
-    github?: string;
-    live?: string;
-  };
+  role: { en: string; ar: string };
+  outcomes: { en: string[]; ar: string[] };
   featured: boolean;
+  github?: string;
+  live?: string;
 }
 
 export const projects: Project[] = [
   {
-    slug: "ai-powered-analytics",
-    title: {
-      en: "AI-Powered Analytics Dashboard",
-      ar: "لوحة تحليلات مدعومة بالذكاء الاصطناعي",
+    slug: 'redPalmWeevil',
+    title: { en: 'Red Palm Weevil AR Detection', ar: 'كشف سوسة النخيل بالواقع المعزز' },
+    description: {
+      en: 'An AR-powered application for detecting and managing Red Palm Weevil infestations, combining AI image recognition with augmented reality visualization.',
+      ar: 'تطبيق واقع معزز لكشف وإدارة إصابات سوسة النخيل الحمراء، يجمع بين التعرف على الصور بالذكاء الاصطناعي والتصوير بالواقع المعزز.',
     },
     summary: {
-      en: "Real-time analytics platform with ML-driven insights and predictive modeling.",
-      ar: "منصة تحليلات فورية مع رؤى مدعومة بالتعلم الآلي والنمذجة التنبؤية.",
+      en: 'Built an innovative AR solution that uses AI-powered image recognition to detect Red Palm Weevil infestations early, helping farmers protect palm trees. Won 1st Place — Best Innovation Award in the Palm & Dates Sector.',
+      ar: 'بناء حل واقع معزز مبتكر يستخدم التعرف على الصور بالذكاء الاصطناعي لكشف إصابات سوسة النخيل مبكرًا، مما يساعد المزارعين على حماية النخيل. فاز بالمركز الأول — جائزة أفضل ابتكار في قطاع النخيل والتمور.',
     },
-    description: {
-      en: "A comprehensive analytics dashboard that leverages machine learning algorithms to provide real-time insights, predictive analytics, and automated reporting. Built with a modern tech stack featuring interactive data visualizations and natural language querying capabilities.",
-      ar: "لوحة تحليلات شاملة تستفيد من خوارزميات التعلم الآلي لتقديم رؤى فورية وتحليلات تنبؤية وتقارير آلية. مبنية بتقنيات حديثة مع تصورات بيانات تفاعلية وقدرات استعلام باللغة الطبيعية.",
-    },
-    tags: ["AI/ML", "Dashboard", "Analytics"],
-    techStack: ["Python", "React", "TensorFlow", "PostgreSQL", "D3.js"],
-    category: "ai",
-    images: {
-      thumbnail: "/placeholders/project-1.png",
-      gallery: [
-        "/placeholders/project-1-gallery-1.png",
-        "/placeholders/project-1-gallery-2.png",
-        "/placeholders/project-1-gallery-3.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/ai-analytics",
-      live: "https://placeholder-demo.com/ai-analytics",
+    tags: ['AI/ML', 'AR/VR', 'Mobile'],
+    techStack: ['Unity', 'C#', 'AR Foundation', 'Python', 'TensorFlow'],
+    role: { en: 'Lead Developer & Researcher', ar: 'مطوّر رئيسي وباحث' },
+    outcomes: {
+      en: ['1st Place — Best Innovation (Palm & Dates Sector)', 'AI-powered weevil detection', 'AR visualization for field inspections'],
+      ar: ['المركز الأول — أفضل ابتكار (قطاع النخيل والتمور)', 'كشف السوسة بالذكاء الاصطناعي', 'تصوير بالواقع المعزز للفحص الميداني'],
     },
     featured: true,
+    github: 'https://github.com/ZaidAbuAlshaar/redPalmWeevil',
   },
   {
-    slug: "ecommerce-platform",
-    title: {
-      en: "Full-Stack E-Commerce Platform",
-      ar: "منصة تجارة إلكترونية متكاملة",
+    slug: 'UniAi',
+    title: { en: 'UniAI — University AI Assistant', ar: 'UniAI — مساعد جامعي ذكي' },
+    description: {
+      en: 'An AI-powered university assistant that helps students with course selection, academic planning, and campus information using natural language processing.',
+      ar: 'مساعد جامعي مدعوم بالذكاء الاصطناعي يساعد الطلاب في اختيار المواد والتخطيط الأكاديمي ومعلومات الحرم الجامعي باستخدام معالجة اللغة الطبيعية.',
     },
     summary: {
-      en: "Scalable e-commerce solution with real-time inventory management and payment processing.",
-      ar: "حل تجارة إلكترونية قابل للتوسع مع إدارة مخزون فورية ومعالجة مدفوعات.",
+      en: 'Developed an intelligent university assistant leveraging LLMs to provide personalized academic guidance, course recommendations, and campus navigation for students.',
+      ar: 'تطوير مساعد جامعي ذكي يستفيد من نماذج اللغة الكبيرة لتقديم إرشاد أكاديمي مخصص وتوصيات بالمواد والتنقل في الحرم الجامعي للطلاب.',
     },
-    description: {
-      en: "A full-featured e-commerce platform supporting multi-vendor marketplaces, real-time inventory tracking, secure payment processing with Stripe, and an admin dashboard with comprehensive analytics. Optimized for performance with SSR and edge caching.",
-      ar: "منصة تجارة إلكترونية متكاملة الميزات تدعم الأسواق متعددة البائعين وتتبع المخزون الفوري ومعالجة المدفوعات الآمنة مع Stripe ولوحة إدارة مع تحليلات شاملة. محسّنة للأداء مع SSR والتخزين المؤقت.",
-    },
-    tags: ["Full-Stack", "E-Commerce", "SaaS"],
-    techStack: ["Next.js", "TypeScript", "Prisma", "Stripe", "Redis"],
-    category: "fullstack",
-    images: {
-      thumbnail: "/placeholders/project-2.png",
-      gallery: [
-        "/placeholders/project-2-gallery-1.png",
-        "/placeholders/project-2-gallery-2.png",
-        "/placeholders/project-2-gallery-3.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/ecommerce",
-      live: "https://placeholder-demo.com/ecommerce",
+    tags: ['AI/ML', 'Full-Stack'],
+    techStack: ['Python', 'OpenAI API', 'LangChain', 'React', 'Node.js'],
+    role: { en: 'AI Engineer & Full-Stack Developer', ar: 'مهندس ذكاء اصطناعي ومطوّر متكامل' },
+    outcomes: {
+      en: ['Natural language academic planning', 'Personalized course recommendations', 'Multi-language support'],
+      ar: ['تخطيط أكاديمي باللغة الطبيعية', 'توصيات مواد مخصصة', 'دعم متعدد اللغات'],
     },
     featured: true,
+    github: 'https://github.com/ZaidAbuAlshaar/UniAi',
   },
   {
-    slug: "xr-training-simulator",
-    title: {
-      en: "XR Training Simulator",
-      ar: "محاكي تدريب الواقع الممتد",
+    slug: 'VR-ARClub',
+    title: { en: 'VR & AR Club Platform', ar: 'منصة نادي الواقع الافتراضي والمعزز' },
+    description: {
+      en: 'The official platform for the VR & Gaming Club at the University of Petra — showcasing events, projects, and resources for XR enthusiasts.',
+      ar: 'المنصة الرسمية لنادي الواقع الافتراضي والألعاب في جامعة البتراء — عرض الفعاليات والمشاريع والموارد لعشاق الواقع الممتد.',
     },
     summary: {
-      en: "Immersive VR/AR training platform for industrial safety and equipment operation.",
-      ar: "منصة تدريب غامرة بالواقع الافتراضي والمعزز للسلامة الصناعية وتشغيل المعدات.",
+      en: 'Built the club\'s web platform from scratch to manage events, member portfolios, and educational resources for the XR community at the University of Petra.',
+      ar: 'بناء منصة النادي من الصفر لإدارة الفعاليات وملفات الأعضاء والموارد التعليمية لمجتمع الواقع الممتد في جامعة البتراء.',
     },
-    description: {
-      en: "An immersive extended reality training simulator designed for industrial environments. Features hand-tracking interactions, realistic physics simulations, multi-user collaboration, and performance analytics. Supports both VR headsets and AR mobile devices.",
-      ar: "محاكي تدريب واقع ممتد غامر مصمم للبيئات الصناعية. يتميز بتفاعلات تتبع اليد ومحاكاة فيزيائية واقعية وتعاون متعدد المستخدمين وتحليلات الأداء. يدعم كلاً من سماعات الواقع الافتراضي والأجهزة المحمولة بالواقع المعزز.",
-    },
-    tags: ["XR", "VR/AR", "Simulation"],
-    techStack: ["Unity", "C#", "WebXR", "Three.js", "Node.js"],
-    category: "xr",
-    images: {
-      thumbnail: "/placeholders/project-3.png",
-      gallery: [
-        "/placeholders/project-3-gallery-1.png",
-        "/placeholders/project-3-gallery-2.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/xr-simulator",
+    tags: ['Full-Stack', 'AR/VR'],
+    techStack: ['React', 'TypeScript', 'TailwindCSS', 'Three.js', 'Vite'],
+    role: { en: 'Founder & Lead Developer', ar: 'مؤسس ومطوّر رئيسي' },
+    outcomes: {
+      en: ['Club web presence established', 'Event management system', '3D interactive elements'],
+      ar: ['تأسيس وجود النادي على الويب', 'نظام إدارة فعاليات', 'عناصر تفاعلية ثلاثية الأبعاد'],
     },
     featured: true,
+    github: 'https://github.com/ZaidAbuAlshaar/VR-ARClub',
   },
   {
-    slug: "nlp-chatbot-framework",
-    title: {
-      en: "NLP Chatbot Framework",
-      ar: "إطار عمل روبوت دردشة NLP",
+    slug: 'nfc-project',
+    title: { en: 'NFC Smart Card System', ar: 'نظام بطاقات NFC الذكية' },
+    description: {
+      en: 'A smart NFC-based system for digital business cards and access control, enabling contactless information sharing and identity verification.',
+      ar: 'نظام ذكي قائم على NFC لبطاقات الأعمال الرقمية والتحكم بالوصول، يتيح مشاركة المعلومات والتحقق من الهوية لاسلكيًا.',
     },
     summary: {
-      en: "Modular chatbot framework with multi-language NLP and context-aware conversations.",
-      ar: "إطار عمل روبوت دردشة معياري مع معالجة لغة طبيعية متعددة اللغات ومحادثات واعية بالسياق.",
+      en: 'Designed and developed an NFC-powered digital card system that replaces traditional business cards with contactless, programmable smart cards linked to dynamic web profiles.',
+      ar: 'تصميم وتطوير نظام بطاقات رقمية مدعوم بتقنية NFC يستبدل بطاقات الأعمال التقليدية ببطاقات ذكية قابلة للبرمجة مرتبطة بملفات ويب ديناميكية.',
     },
-    description: {
-      en: "A flexible, modular chatbot framework supporting multi-language natural language processing, context-aware conversation flows, sentiment analysis, and easy integration with popular messaging platforms. Includes a visual conversation builder and analytics dashboard.",
-      ar: "إطار عمل روبوت دردشة مرن ومعياري يدعم معالجة اللغة الطبيعية متعددة اللغات وتدفقات المحادثة الواعية بالسياق وتحليل المشاعر والتكامل السهل مع منصات المراسلة الشائعة. يتضمن منشئ محادثات مرئي ولوحة تحليلات.",
+    tags: ['Full-Stack', 'IoT'],
+    techStack: ['React', 'Node.js', 'NFC', 'MongoDB', 'TypeScript'],
+    role: { en: 'Full-Stack Developer', ar: 'مطوّر متكامل' },
+    outcomes: {
+      en: ['Contactless digital business cards', 'Dynamic web profile linking', 'NFC read/write integration'],
+      ar: ['بطاقات أعمال رقمية لاسلكية', 'ربط بملفات ويب ديناميكية', 'تكامل قراءة/كتابة NFC'],
     },
-    tags: ["AI/ML", "NLP", "Framework"],
-    techStack: ["Python", "FastAPI", "Transformers", "React", "Docker"],
-    category: "ai",
-    images: {
-      thumbnail: "/placeholders/project-4.png",
-      gallery: [
-        "/placeholders/project-4-gallery-1.png",
-        "/placeholders/project-4-gallery-2.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/nlp-chatbot",
-      live: "https://placeholder-demo.com/chatbot",
-    },
-    featured: false,
+    featured: true,
+    github: 'https://github.com/ZaidAbuAlshaar/nfc-project',
   },
   {
-    slug: "smart-iot-dashboard",
-    title: {
-      en: "Smart IoT Dashboard",
-      ar: "لوحة إنترنت الأشياء الذكية",
+    slug: 'HealthyCalculator',
+    title: { en: 'Healthy Calculator', ar: 'الحاسبة الصحية' },
+    description: {
+      en: 'A health & fitness calculator app that computes BMI, calorie needs, macro breakdowns, and provides personalized diet recommendations.',
+      ar: 'تطبيق حاسبة صحية ولياقة بدنية يحسب مؤشر كتلة الجسم والسعرات الحرارية وتوزيع العناصر الغذائية ويقدم توصيات غذائية مخصصة.',
     },
     summary: {
-      en: "IoT device management platform with real-time monitoring and automated alerts.",
-      ar: "منصة إدارة أجهزة إنترنت الأشياء مع مراقبة فورية وتنبيهات آلية.",
+      en: 'Built a comprehensive health calculator with BMI analysis, TDEE estimation, and macro-nutrient planning — featuring clean UI and scientifically backed formulas.',
+      ar: 'بناء حاسبة صحية شاملة مع تحليل مؤشر كتلة الجسم وتقدير معدل الأيض وتخطيط العناصر الغذائية — بواجهة نظيفة ومعادلات مدعومة علميًا.',
     },
-    description: {
-      en: "A centralized IoT management dashboard for monitoring and controlling connected devices. Features real-time data streaming via WebSockets, automated alerting with customizable thresholds, device provisioning, and historical data analysis with exportable reports.",
-      ar: "لوحة إدارة مركزية لإنترنت الأشياء لمراقبة الأجهزة المتصلة والتحكم فيها. تتميز ببث البيانات الفوري عبر WebSockets والتنبيه الآلي مع عتبات قابلة للتخصيص وتوفير الأجهزة وتحليل البيانات التاريخية مع تقارير قابلة للتصدير.",
-    },
-    tags: ["IoT", "Full-Stack", "Real-time"],
-    techStack: ["React", "Node.js", "MQTT", "InfluxDB", "Grafana"],
-    category: "fullstack",
-    images: {
-      thumbnail: "/placeholders/project-5.png",
-      gallery: [
-        "/placeholders/project-5-gallery-1.png",
-        "/placeholders/project-5-gallery-2.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/iot-dashboard",
+    tags: ['Mobile', 'UI/UX'],
+    techStack: ['Java', 'Android SDK', 'XML', 'Material Design'],
+    role: { en: 'Mobile App Developer', ar: 'مطوّر تطبيقات جوال' },
+    outcomes: {
+      en: ['BMI & calorie tracking', 'Personalized recommendations', 'Clean Material Design UI'],
+      ar: ['تتبع مؤشر كتلة الجسم والسعرات', 'توصيات مخصصة', 'واجهة Material Design نظيفة'],
     },
     featured: false,
+    github: 'https://github.com/ZaidAbuAlshaar/HealthyCalculator',
   },
   {
-    slug: "mobile-health-tracker",
-    title: {
-      en: "Mobile Health Tracker",
-      ar: "تطبيق تتبع الصحة المحمول",
+    slug: 'HealthyTimer',
+    title: { en: 'Healthy Timer', ar: 'مؤقت صحي' },
+    description: {
+      en: 'A workout and wellness timer app with customizable intervals, exercise routines, and health-focused timing features.',
+      ar: 'تطبيق مؤقت للتمارين والعافية مع فترات قابلة للتخصيص وروتين تمارين وميزات توقيت تركز على الصحة.',
     },
     summary: {
-      en: "Cross-platform health tracking app with AI-powered wellness recommendations.",
-      ar: "تطبيق تتبع صحة متعدد المنصات مع توصيات عافية مدعومة بالذكاء الاصطناعي.",
+      en: 'Developed a timer app tailored for health and fitness routines, supporting HIIT, Tabata, and custom interval training with audio cues and progress tracking.',
+      ar: 'تطوير تطبيق مؤقت مصمم لروتين الصحة واللياقة، يدعم تدريب HIIT و Tabata والفترات المخصصة مع إشارات صوتية وتتبع التقدم.',
     },
-    description: {
-      en: "A cross-platform mobile health tracking application providing personalized wellness recommendations powered by AI. Features activity tracking, nutrition logging, sleep analysis, and integration with popular wearable devices. Includes a social component for community challenges.",
-      ar: "تطبيق تتبع صحة محمول متعدد المنصات يقدم توصيات عافية مخصصة مدعومة بالذكاء الاصطناعي. يتميز بتتبع النشاط وتسجيل التغذية وتحليل النوم والتكامل مع أجهزة القياس القابلة للارتداء الشائعة. يتضمن مكوناً اجتماعياً لتحديات المجتمع.",
-    },
-    tags: ["Mobile", "AI/ML", "Health"],
-    techStack: ["React Native", "TypeScript", "Firebase", "TensorFlow Lite"],
-    category: "mobile",
-    images: {
-      thumbnail: "/placeholders/project-6.png",
-      gallery: [
-        "/placeholders/project-6-gallery-1.png",
-        "/placeholders/project-6-gallery-2.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/health-tracker",
-      live: "https://placeholder-demo.com/health-tracker",
+    tags: ['Mobile', 'UI/UX'],
+    techStack: ['Java', 'Android SDK', 'XML', 'Material Design'],
+    role: { en: 'Mobile App Developer', ar: 'مطوّر تطبيقات جوال' },
+    outcomes: {
+      en: ['Custom interval timers', 'HIIT & Tabata presets', 'Audio cues & progress tracking'],
+      ar: ['مؤقتات فترات مخصصة', 'إعدادات HIIT و Tabata مسبقة', 'إشارات صوتية وتتبع التقدم'],
     },
     featured: false,
+    github: 'https://github.com/ZaidAbuAlshaar/HealthyTimer',
   },
   {
-    slug: "data-pipeline-orchestrator",
-    title: {
-      en: "Data Pipeline Orchestrator",
-      ar: "منسق خطوط البيانات",
+    slug: 'JavaWithZaid',
+    title: { en: 'Java With Zaid — Learning Platform', ar: 'جافا مع زيد — منصة تعليمية' },
+    description: {
+      en: 'An educational platform with Java programming tutorials, exercises, and code examples for beginners and intermediate learners.',
+      ar: 'منصة تعليمية تضم دروس برمجة جافا وتمارين وأمثلة كود للمبتدئين والمتوسطين.',
     },
     summary: {
-      en: "Visual data pipeline builder with drag-and-drop ETL workflows and monitoring.",
-      ar: "منشئ خطوط بيانات مرئي مع سير عمل ETL بالسحب والإفلات والمراقبة.",
+      en: 'Created a structured Java learning resource with tutorials, code exercises, and real-world examples to help students master Java fundamentals and OOP concepts.',
+      ar: 'إنشاء مورد تعليمي منظم لجافا مع دروس وتمارين كود وأمثلة واقعية لمساعدة الطلاب على إتقان أساسيات جافا ومفاهيم البرمجة الكائنية.',
     },
-    description: {
-      en: "A visual data pipeline orchestration tool that enables teams to build, monitor, and manage ETL workflows through an intuitive drag-and-drop interface. Supports multiple data sources, transformation logic, scheduling, error handling, and real-time pipeline monitoring.",
-      ar: "أداة تنسيق خطوط بيانات مرئية تمكّن الفرق من بناء ومراقبة وإدارة سير عمل ETL من خلال واجهة سحب وإفلات بديهية. تدعم مصادر بيانات متعددة ومنطق التحويل والجدولة ومعالجة الأخطاء ومراقبة خطوط البيانات الفورية.",
-    },
-    tags: ["Data", "ETL", "DevOps"],
-    techStack: ["Python", "Apache Airflow", "React", "PostgreSQL", "Docker"],
-    category: "data",
-    images: {
-      thumbnail: "/placeholders/project-7.png",
-      gallery: [
-        "/placeholders/project-7-gallery-1.png",
-        "/placeholders/project-7-gallery-2.png",
-      ],
-    },
-    links: {
-      github: "https://github.com/PLACEHOLDER/data-pipeline",
+    tags: ['Education', 'Full-Stack'],
+    techStack: ['Java', 'OOP', 'Data Structures', 'Algorithms'],
+    role: { en: 'Creator & Instructor', ar: 'المؤسس والمدرب' },
+    outcomes: {
+      en: ['Comprehensive Java tutorials', 'Hands-on coding exercises', 'OOP & data structure examples'],
+      ar: ['دروس جافا شاملة', 'تمارين كود عملية', 'أمثلة البرمجة الكائنية وهياكل البيانات'],
     },
     featured: false,
+    github: 'https://github.com/ZaidAbuAlshaar/JavaWithZaid',
+  },
+  {
+    slug: 'PythonWithZaid',
+    title: { en: 'Python With Zaid — Learning Platform', ar: 'بايثون مع زيد — منصة تعليمية' },
+    description: {
+      en: 'A Python programming learning platform with tutorials, projects, and exercises covering fundamentals through advanced topics like AI and data science.',
+      ar: 'منصة تعلّم برمجة بايثون مع دروس ومشاريع وتمارين تغطي الأساسيات حتى المواضيع المتقدمة كالذكاء الاصطناعي وعلم البيانات.',
+    },
+    summary: {
+      en: 'Built a comprehensive Python learning platform with progressive tutorials from basics to advanced AI/ML concepts, including hands-on projects and exercises.',
+      ar: 'بناء منصة تعلّم بايثون شاملة مع دروس تدريجية من الأساسيات إلى مفاهيم الذكاء الاصطناعي المتقدمة، بما في ذلك مشاريع وتمارين عملية.',
+    },
+    tags: ['Education', 'AI/ML'],
+    techStack: ['Python', 'AI/ML', 'Data Science', 'Jupyter'],
+    role: { en: 'Creator & Instructor', ar: 'المؤسس والمدرب' },
+    outcomes: {
+      en: ['Python fundamentals to advanced AI', 'Hands-on projects & exercises', 'Data science foundations'],
+      ar: ['من أساسيات بايثون إلى الذكاء الاصطناعي المتقدم', 'مشاريع وتمارين عملية', 'أسس علم البيانات'],
+    },
+    featured: false,
+    github: 'https://github.com/ZaidAbuAlshaar/PythonWithZaid',
+  },
+  {
+    slug: 'stc-ai-ar',
+    title: { en: 'STC AI & AR Project (Internship)', ar: 'مشروع STC للذكاء الاصطناعي والواقع المعزز (تدريب)' },
+    description: {
+      en: 'An AI & Augmented Reality solution developed for STC Saudi Arabia during my internship at BMB Group, combining intelligent automation with immersive AR visualization.',
+      ar: 'حل ذكاء اصطناعي وواقع معزز طُوّر لشركة STC السعودية خلال تدريبي في مجموعة BMB، يجمع بين الأتمتة الذكية والتصور الغامر بالواقع المعزز.',
+    },
+    summary: {
+      en: 'Built an enterprise-grade AI & AR application for STC Saudi Arabia that integrates machine learning models with augmented reality interfaces for enhanced customer engagement.',
+      ar: 'بناء تطبيق ذكاء اصطناعي وواقع معزز بمستوى المؤسسات لشركة STC السعودية يدمج نماذج تعلّم الآلة مع واجهات الواقع المعزز لتعزيز تفاعل العملاء.',
+    },
+    tags: ['AI/ML', 'AR/VR', '3D'],
+    techStack: ['Unity', 'C#', 'Python', 'AR Foundation', 'AI/ML'],
+    role: { en: 'AR/VR Developer & AI Intern at BMB Group', ar: 'مطوّر واقع معزز/افتراضي ومتدرب ذكاء اصطناعي في مجموعة BMB' },
+    outcomes: {
+      en: ['Delivered AI & AR solution for STC Saudi Arabia', 'Integrated ML models with AR visualization', 'Enhanced customer engagement through immersive tech'],
+      ar: ['تسليم حل ذكاء اصطناعي وواقع معزز لشركة STC السعودية', 'دمج نماذج تعلّم الآلة مع تصور الواقع المعزز', 'تعزيز تفاعل العملاء عبر التقنيات الغامرة'],
+    },
+    featured: true,
   },
 ];
 
-export const categoryColors: Record<Project["category"], string> = {
-  ai: "from-purple-500 to-blue-500",
-  fullstack: "from-orange-500 to-amber-500",
-  xr: "from-emerald-500 to-cyan-500",
-  mobile: "from-pink-500 to-rose-500",
-  data: "from-indigo-500 to-violet-500",
-  other: "from-gray-500 to-slate-500",
-};
-
-export const categoryLabels: Record<Project["category"], { en: string; ar: string }> = {
-  ai: { en: "AI / ML", ar: "ذكاء اصطناعي" },
-  fullstack: { en: "Full-Stack", ar: "متكامل" },
-  xr: { en: "XR / VR / AR", ar: "واقع ممتد" },
-  mobile: { en: "Mobile", ar: "تطبيقات محمولة" },
-  data: { en: "Data Engineering", ar: "هندسة البيانات" },
-  other: { en: "Other", ar: "أخرى" },
-};
+export const allTags = ['All', ...Array.from(new Set(projects.flatMap((p) => p.tags)))];
