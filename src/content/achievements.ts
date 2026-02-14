@@ -5,6 +5,7 @@ export interface Achievement {
   description: { en: string; ar: string };
   year: number;
   category: 'award' | 'certification' | 'experience';
+  media?: string[];
 }
 
 export const achievements: Achievement[] = [
@@ -14,33 +15,49 @@ export const achievements: Achievement[] = [
     title: { en: '1st Place — Sustainable Tech Hackathon', ar: 'المركز الأول — هاكاثون التقنيات المستدامة' },
     issuer: { en: 'IEEE, Jordan', ar: 'IEEE، الأردن' },
     description: {
-      en: 'Won first place at the IEEE Sustainable Technology Hackathon 2025 in Jordan, developing an innovative tech solution addressing sustainability challenges.',
-      ar: 'فزت بالمركز الأول في هاكاثون IEEE للتقنيات المستدامة 2025 في الأردن، بتطوير حل تقني مبتكر يعالج تحديات الاستدامة.',
+      en: 'Competed against top university teams across Jordan and won 1st place at the IEEE Sustainable Technology Hackathon 2025. Designed and built a working prototype that addresses real-world sustainability challenges using cutting-edge technology — recognized by IEEE judges for innovation, technical execution, and impact potential.',
+      ar: 'تنافست ضد أفضل الفرق الجامعية في الأردن وفزت بالمركز الأول في هاكاثون IEEE للتقنيات المستدامة 2025. صممت وبنيت نموذجًا أوليًا يعالج تحديات الاستدامة الحقيقية باستخدام أحدث التقنيات —!حصل على تقدير حكام IEEE للابتكار والتنفيذ التقني وإمكانية التأثير.',
     },
     year: 2025,
     category: 'award',
+    media: [
+      '/images/ZaidAbuAlshaar1.jpg',
+      '/images/ZaidAbuAlshaar2.JPG',
+      '/images/Gemini_Generated_Image_cinj1ocinj1ocinj-Photoroom.png',
+    ],
   },
   {
     id: 'award-palm-dates',
     title: { en: '1st Place — Best Innovation Award (Palm & Dates Sector)', ar: 'المركز الأول — جائزة أفضل ابتكار (قطاع النخيل والتمور)' },
     issuer: { en: 'National Competition, Jordan', ar: 'مسابقة وطنية، الأردن' },
     description: {
-      en: 'Awarded 1st place for the Best Innovation in the Palm & Dates sector at a national competition in Jordan, 2025.',
-      ar: 'حصلت على المركز الأول لأفضل ابتكار في قطاع النخيل والتمور في مسابقة وطنية بالأردن، 2025.',
+      en: 'Awarded 1st place for the Best Innovation in the Palm & Dates sector at a national competition in Jordan, 2025. Developed PalmGuard — an AI-powered pest detection system enhanced with augmented reality, providing farmers with a practical, scalable tool to combat Red Palm Weevil infestations before they cause irreversible damage.',
+      ar: 'حصلت على المركز الأول لأفضل ابتكار في قطاع النخيل والتمور في مسابقة وطنية بالأردن 2025. طوّرت حارس النخيل — نظام كشف آفات مدعوم بالذكاء الاصطناعي ومعزز بالواقع المعزز، يوفر للمزارعين أداة عملية وقابلة للتوسع لمكافحة سوسة النخيل الحمراء قبل أن تسبب أضرارًا لا رجعة فيها.',
     },
     year: 2025,
     category: 'award',
+    media: [
+      '/images/ZaidAbuAlshaar4.JPG',
+      '/images/ZaidAbuAlshaar3.JPG',
+      '/images/WhatsApp Image 2025-12-28 at 7.22.37 PM.jpeg',
+      '/images/IMG_2026012419023511.MP4',
+      '/images/IMG_5421.jpg',
+    ],
   },
   {
     id: 'award-data-cleaning',
     title: { en: '2nd Place — Data Cleaning Competition', ar: 'المركز الثاني — مسابقة تنظيف البيانات' },
     issuer: { en: 'IEEE, Jordan', ar: 'IEEE، الأردن' },
     description: {
-      en: 'Secured 2nd place in the IEEE Data Cleaning Competition 2025, showcasing advanced data wrangling and analysis skills.',
-      ar: 'حصلت على المركز الثاني في مسابقة IEEE لتنظيف البيانات 2025، مستعرضًا مهارات متقدمة في معالجة البيانات وتحليلها.',
+      en: 'Secured 2nd place in the IEEE Data Cleaning Competition 2025, demonstrating advanced skills in data wrangling, anomaly detection, and automated preprocessing pipelines under competitive time pressure — standing out among dozens of participating teams.',
+      ar: 'حصلت على المركز الثاني في مسابقة IEEE لتنظيف البيانات 2025، مستعرضًا مهارات متقدمة في معالجة البيانات وكشف الشذوذ وخطوط المعالجة الآلية تحت ضغط الوقت التنافسي 2025— متميزًا بين عشرات الفرق المشاركة.',
     },
     year: 2025,
     category: 'award',
+    media: [
+      '/images/IMG_202601241902351.JPG',
+      '/images/IMG_2026012419023512.MP4',
+    ],
   },
 
   // ─── Certifications ───
@@ -121,6 +138,28 @@ export const achievements: Achievement[] = [
       ar: 'شريك مؤسس لنادي الواقع الافتراضي والألعاب في جامعة البتراء، بناء مجتمع لعشاق التقنيات الغامرة ومطوري الألعاب.',
     },
     year: 2024,
+    category: 'experience',
+  },
+  {
+    id: 'exp-freelance',
+    title: { en: 'Freelance Web & AI Developer', ar: 'مطوّر ويب وذكاء اصطناعي مستقل' },
+    issuer: { en: 'Self-employed', ar: 'عمل حر' },
+    description: {
+      en: 'Delivering end-to-end web applications, AI integration solutions, and NFC smart card systems for clients across Jordan and the region since 2025.',
+      ar: 'تقديم تطبيقات ويب متكاملة وحلول تكامل ذكاء اصطناعي وأنظمة بطاقات NFC الذكية لعملاء في الأردن والمنطقة منذ 2025.',
+    },
+    year: 2025,
+    category: 'experience',
+  },
+  {
+    id: 'exp-bmb-stc',
+    title: { en: 'AR/VR Developer & AI Intern — BMB Group (STC Project)', ar: 'مطوّر واقع معزز ومتدرب ذكاء اصطناعي — مجموعة BMB (مشروع STC)' },
+    issuer: { en: 'BMB Group / STC Saudi Arabia', ar: 'مجموعة BMB / STC السعودية' },
+    description: {
+      en: 'Developed an enterprise-grade AI & AR solution for STC Saudi Arabia during an internship at BMB Group. Built intelligent automation integrated with immersive AR interfaces. Also provided web support using Figma, HTML, CSS, and JavaScript.',
+      ar: 'تطوير حل ذكاء اصطناعي وواقع معزز بمستوى المؤسسات لشركة STC السعودية خلال تدريب في مجموعة BMB. بناء أتمتة ذكية مدمجة مع واجهات واقع معزز غامرة. تقديم دعم ويب باستخدام Figma و HTML و CSS و JavaScript.',
+    },
+    year: 2025,
     category: 'experience',
   },
 ];

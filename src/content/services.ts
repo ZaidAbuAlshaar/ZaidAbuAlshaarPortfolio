@@ -2,7 +2,7 @@ import type { Bilingual } from './site';
 
 export interface Service {
   id: string;
-  icon: 'Code' | 'Brain' | 'Palette' | 'Glasses';
+  icon: 'Code' | 'Brain' | 'Palette' | 'Glasses' | 'CreditCard' | 'Mic';
   title: Bilingual;
   desc: Bilingual;
   linkedProjectSlugs: string[];
@@ -27,7 +27,7 @@ export const services: Service[] = [
       en: 'Smart chatbots, AI-powered automation, LangChain agents, and OpenAI API integrations that transform how your business operates.',
       ar: 'روبوتات محادثة ذكية وأتمتة مدعومة بالذكاء الاصطناعي ووكلاء LangChain وتكامل OpenAI API لتحويل طريقة عمل أعمالك.',
     },
-    linkedProjectSlugs: ['UniAi', 'redPalmWeevil', 'PythonWithZaid'],
+    linkedProjectSlugs: ['uniflow', 'palmGuard', 'PythonWithZaid'],
   },
   {
     id: 'uiux',
@@ -47,6 +47,26 @@ export const services: Service[] = [
       en: 'Immersive AR/VR applications built with Unity, Three.js, and WebXR — from virtual showrooms to interactive 3D product experiences.',
       ar: 'تطبيقات واقع معزز وافتراضي مبنية بـ Unity و Three.js و WebXR — من صالات العرض الافتراضية إلى تجارب المنتجات التفاعلية ثلاثية الأبعاد.',
     },
-    linkedProjectSlugs: ['stc-ai-ar', 'redPalmWeevil', 'VR-ARClub'],
+    linkedProjectSlugs: ['palmGuard', 'VR-ARClub', 'impact-2025-lecture'],
+  },
+  {
+    id: 'nfc',
+    icon: 'CreditCard',
+    title: { en: 'NFC Smart Cards', ar: 'بطاقات NFC الذكية' },
+    desc: {
+      en: 'Contactless digital business cards powered by NFC technology — programmable smart cards linked to dynamic web profiles for instant networking.',
+      ar: 'بطاقات أعمال رقمية لاسلكية مدعومة بتقنية NFC — بطاقات ذكية قابلة للبرمجة مرتبطة بملفات ويب ديناميكية للتواصل الفوري.',
+    },
+    linkedProjectSlugs: ['nfc-project'],
+  },
+  {
+    id: 'lectures',
+    icon: 'Mic',
+    title: { en: 'Lectures & Workshops', ar: 'محاضرات وورش عمل' },
+    desc: {
+      en: 'Professional talks and hands-on workshops on VR/AR, AI, and modern development — delivered at conferences, universities, and corporate events.',
+      ar: 'محاضرات مهنية وورش عمل تطبيقية حول الواقع الافتراضي والمعزز والذكاء الاصطناعي والتطوير الحديث — تُقدَّم في المؤتمرات والجامعات والفعاليات.',
+    },
+    linkedProjectSlugs: ['impact-2025-lecture'],
   },
 ];

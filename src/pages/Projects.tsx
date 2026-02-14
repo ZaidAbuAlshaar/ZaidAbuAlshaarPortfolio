@@ -1,16 +1,27 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Github, ExternalLink, ChevronDown, ChevronUp, Image } from 'lucide-react';
+import { Search, Github, ExternalLink, ChevronDown, ChevronUp, Clock, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { projects, allTags } from '@/content/projects';
-import Gallery from '@/components/Gallery';
-import { getProjectImage, handleImageError } from '@/lib/images';
+import { handleImageError } from '@/lib/images';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
 import SEO from '@/components/SEO';
+
+/* Coming Soon placeholders for categories with no projects yet */
+const comingSoonCategories = [
+  {
+    tag: '3D',
+    title: { en: '3D Projects Coming Soon', ar: 'مشاريع ثلاثية الأبعاد قريبًا' },
+    desc: {
+      en: 'Exciting 3D and WebGL experiences are in development. Stay tuned!',
+      ar: 'تجارب ثلاثية الأبعاد و WebGL مثيرة قيد التطوير. ترقبوا!',
+    },
+  },
+];
 
 const Projects = () => {
   const { lang } = useLanguage();
@@ -18,10 +29,8 @@ const Projects = () => {
   const [activeTag, setActiveTag] = useState('All');
   const [search, setSearch] = useState('');
   const [expandedProject, setExpandedProject] = useState<string | null>(null);
-  const [galleryProject, setGalleryProject] = useState<string | null>(null);
   const [highlightedSlugs, setHighlightedSlugs] = useState<string[]>([]);
 
-  // Handle service links: ?highlight=slug1,slug2 or ?service=fullstack
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const highlight = params.get('highlight');
@@ -48,6 +57,12 @@ const Projects = () => {
     return result;
   }, [activeTag, search, lang]);
 
+  /* Show Coming Soon card if tag filter matches an empty category */
+  const activeComingSoon = useMemo(() => {
+    if (activeTag === 'All') return comingSoonCategories;
+    return comingSoonCategories.filter((cs) => cs.tag === activeTag);
+  }, [activeTag]);
+
   const t = {
     en: {
       title: 'Projects',
@@ -55,8 +70,8 @@ const Projects = () => {
       searchPlaceholder: 'Search projects...',
       noResults: 'No projects match your search.',
       requestDemo: 'Request a Demo',
-      viewGallery: 'View Gallery',
-      hideGallery: 'Hide Gallery',
+      contactForInfo: 'Contact for Info',
+      comingSoon: 'Coming Soon',
     },
     ar: {
       title: 'المشاريع',
@@ -64,8 +79,8 @@ const Projects = () => {
       searchPlaceholder: 'ابحث في المشاريع...',
       noResults: 'لا توجد مشاريع تطابق بحثك.',
       requestDemo: 'اطلب عرضًا تجريبيًا',
-      viewGallery: 'عرض المعرض',
-      hideGallery: 'إخفاء المعرض',
+      contactForInfo: 'تواصل للمزيد',
+      comingSoon: 'قريبًا',
     },
   };
 
@@ -125,13 +140,12 @@ const Projects = () => {
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            {filtered.length === 0 ? (
+            {filtered.length === 0 && activeComingSoon.length === 0 ? (
               <p className="text-center text-muted-foreground py-12">{c.noResults}</p>
             ) : (
               <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filtered.map((project) => {
                   const isExpanded = expandedProject === project.slug;
-                  const showGallery = galleryProject === project.slug;
                   const isHighlighted = highlightedSlugs.includes(project.slug);
 
                   return (
@@ -144,11 +158,16 @@ const Projects = () => {
                         {/* Card Image */}
                         <div className="aspect-video bg-muted relative overflow-hidden">
                           <img
-                            src={getProjectImage(project.slug)}
+                            src={project.image}
                             alt={project.title[lang]}
                             onError={handleImageError}
                             className="w-full h-full object-cover"
                           />
+                          {project.comingSoon && (
+                            <div className="absolute top-2 end-2 bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded-full">
+                              {c.comingSoon}
+                            </div>
+                          )}
                         </div>
 
                         <CardContent className="p-5 flex flex-col flex-1">
@@ -164,24 +183,16 @@ const Projects = () => {
                             ))}
                           </div>
 
-                          {/* Expand / Collapse Button */}
+                          {/* Expand / Collapse */}
                           <div className="mt-auto space-y-3">
                             <button
                               onClick={() => setExpandedProject(isExpanded ? null : project.slug)}
                               className="flex items-center gap-1 text-sm text-primary hover:underline"
                             >
                               {isExpanded
-                                ? lang === 'en'
-                                  ? 'Less details'
-                                  : 'تفاصيل أقل'
-                                : lang === 'en'
-                                  ? 'More details'
-                                  : 'تفاصيل أكثر'}
-                              {isExpanded ? (
-                                <ChevronUp className="h-3 w-3" />
-                              ) : (
-                                <ChevronDown className="h-3 w-3" />
-                              )}
+                                ? lang === 'en' ? 'Less details' : 'تفاصيل أقل'
+                                : lang === 'en' ? 'More details' : 'تفاصيل أكثر'}
+                              {isExpanded ? <ChevronUp className="h-3 w-3" /> : <ChevronDown className="h-3 w-3" />}
                             </button>
 
                             <AnimatePresence>
@@ -218,46 +229,6 @@ const Projects = () => {
                                         ))}
                                       </div>
                                     </div>
-
-                                    <div>
-                                      <h4 className="text-xs font-semibold uppercase text-muted-foreground mb-1">
-                                        {lang === 'en' ? 'Key Outcomes' : 'النتائج الرئيسية'}
-                                      </h4>
-                                      <ul className="space-y-1">
-                                        {project.outcomes[lang].map((outcome, i) => (
-                                          <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                            <span className="text-primary mt-0.5">&#10003;</span>
-                                            {outcome}
-                                          </li>
-                                        ))}
-                                      </ul>
-                                    </div>
-
-                                    {/* View Gallery Button */}
-                                    <button
-                                      onClick={() => setGalleryProject(showGallery ? null : project.slug)}
-                                      className="flex items-center gap-1 text-sm text-primary hover:underline"
-                                    >
-                                      <Image className="h-3 w-3" />
-                                      {showGallery ? c.hideGallery : c.viewGallery}
-                                    </button>
-
-                                    <AnimatePresence>
-                                      {showGallery && (
-                                        <motion.div
-                                          initial={{ height: 0, opacity: 0 }}
-                                          animate={{ height: 'auto', opacity: 1 }}
-                                          exit={{ height: 0, opacity: 0 }}
-                                          transition={{ duration: 0.3 }}
-                                          className="overflow-hidden"
-                                        >
-                                          <Gallery
-                                            basePath={`/images/projects/${project.slug}`}
-                                            alt={project.title[lang]}
-                                          />
-                                        </motion.div>
-                                      )}
-                                    </AnimatePresence>
                                   </div>
                                 </motion.div>
                               )}
@@ -272,17 +243,23 @@ const Projects = () => {
                                   </a>
                                 </Button>
                               )}
-                              {project.live ? (
+                              {project.contactForInfo ? (
+                                <Button asChild size="sm" className="flex-1">
+                                  <Link to={`/${lang}/contact`}>
+                                    <Mail className="h-4 w-4" /> {c.contactForInfo}
+                                  </Link>
+                                </Button>
+                              ) : project.live ? (
                                 <Button asChild size="sm" className="flex-1">
                                   <a href={project.live} target="_blank" rel="noopener noreferrer">
                                     <ExternalLink className="h-4 w-4" /> Live
                                   </a>
                                 </Button>
-                              ) : (
+                              ) : !project.github ? (
                                 <Button asChild variant="secondary" size="sm" className="flex-1">
                                   <Link to={`/${lang}/contact`}>{c.requestDemo}</Link>
                                 </Button>
-                              )}
+                              ) : null}
                             </div>
                           </div>
                         </CardContent>
@@ -290,6 +267,25 @@ const Projects = () => {
                     </motion.div>
                   );
                 })}
+
+                {/* Coming Soon Cards for empty categories */}
+                {!search.trim() &&
+                  activeComingSoon.map((cs) => (
+                    <motion.div key={`cs-${cs.tag}`} {...staggerItem} className="flex">
+                      <Card className="glass-border h-full w-full border-dashed border-2 border-primary/20 flex flex-col">
+                        <CardContent className="p-6 flex flex-col items-center justify-center text-center space-y-3 flex-1 min-h-[260px]">
+                          <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                            <Clock className="h-6 w-6 text-primary" />
+                          </div>
+                          <h3 className="font-heading font-semibold">{cs.title[lang]}</h3>
+                          <p className="text-sm text-muted-foreground">{cs.desc[lang]}</p>
+                          <span className="text-xs font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+                            {c.comingSoon}
+                          </span>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  ))}
               </motion.div>
             )}
           </motion.div>

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Github, Linkedin, Mail, Phone, Code, Brain, Palette, Glasses, ArrowRight, Trophy, GraduationCap, Download } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Code, Brain, Palette, Glasses, CreditCard, Mic, ArrowRight, Trophy, GraduationCap, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -9,12 +9,12 @@ import { siteConfig } from '@/content/site';
 import { services } from '@/content/services';
 import { projects } from '@/content/projects';
 import { faq } from '@/content/faq';
-import { getProjectImage, handleImageError } from '@/lib/images';
+import { handleImageError } from '@/lib/images';
 import { fadeUp, staggerContainer, staggerItem, scaleIn } from '@/lib/animations';
 import SEO from '@/components/SEO';
 
 const socialIcons = { Github, Linkedin, Phone, Mail };
-const serviceIcons = { Code, Brain, Palette, Glasses };
+const serviceIcons = { Code, Brain, Palette, Glasses, CreditCard, Mic };
 
 const Home = () => {
   const { lang } = useLanguage();
@@ -32,6 +32,7 @@ const Home = () => {
       finalCta: 'Ready to Build Something Great?',
       finalCtaDesc: "Let's turn your idea into a reality. Fast, polished, and AI-powered.",
       getStarted: 'Get Started',
+      comingSoon: 'Coming Soon',
     },
     ar: {
       servicesTitle: 'ما أقدمه',
@@ -45,6 +46,7 @@ const Home = () => {
       finalCta: 'مستعد لبناء شيء رائع؟',
       finalCtaDesc: 'لنحوّل فكرتك إلى واقع. سريع، أنيق، ومدعوم بالذكاء الاصطناعي.',
       getStarted: 'ابدأ الآن',
+      comingSoon: 'قريبًا',
     },
   };
 
@@ -123,7 +125,7 @@ const Home = () => {
       <section className="py-20">
         <div className="container">
           <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">{t[lang].servicesTitle}</motion.h2>
-          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {services.map((service) => {
               const Icon = serviceIcons[service.icon as keyof typeof serviceIcons];
               return (
@@ -156,8 +158,13 @@ const Home = () => {
                 <Link to={`/${lang}/projects`}>
                   <Card className="hover-lift glass-border overflow-hidden group cursor-pointer">
                     <div className="aspect-video bg-muted relative overflow-hidden">
-                      <img src={getProjectImage(project.slug)} alt={project.title[lang]} onError={handleImageError}
+                      <img src={project.image} alt={project.title[lang]} onError={handleImageError}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      {project.comingSoon && (
+                        <div className="absolute top-2 end-2 bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded-full">
+                          {t[lang].comingSoon}
+                        </div>
+                      )}
                     </div>
                     <CardContent className="p-5 space-y-3">
                       <h3 className="font-heading font-semibold">{project.title[lang]}</h3>
