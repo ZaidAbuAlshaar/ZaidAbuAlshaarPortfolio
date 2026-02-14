@@ -44,7 +44,7 @@ const Awards = () => {
   const c = t[lang];
 
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-20">
       <SEO
         title={lang === 'en' ? 'Awards & Competitions' : 'الجوائز والمسابقات'}
         description={
@@ -55,8 +55,8 @@ const Awards = () => {
         path="awards"
       />
       <div className="container max-w-5xl">
-        <motion.div {...fadeUp} className="text-center mb-16 space-y-3">
-          <h1 className="text-4xl font-bold">{c.title}</h1>
+        <motion.div {...fadeUp} className="text-center mb-10 sm:mb-16 space-y-3">
+          <h1 className="text-3xl sm:text-4xl font-bold">{c.title}</h1>
           <p className="text-muted-foreground">{c.subtitle}</p>
         </motion.div>
 

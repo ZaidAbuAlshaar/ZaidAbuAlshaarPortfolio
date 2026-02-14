@@ -55,29 +55,43 @@ const Home = () => {
       <SEO />
 
       {/* Hero */}
-      <section className="relative min-h-[90vh] flex flex-col lg:flex-row overflow-hidden">
-        <div className="flex-1 flex flex-col justify-center px-6 lg:px-16 py-20 relative z-10">
-          <motion.p {...fadeUp} className="text-primary font-medium mb-3 text-sm tracking-widest uppercase">
+      <section className="relative min-h-[auto] lg:min-h-[90vh] flex flex-col lg:flex-row overflow-hidden">
+        <div className="flex-1 flex flex-col justify-center px-6 lg:px-16 py-12 sm:py-16 lg:py-20 relative z-10">
+          {/* Mobile-only portrait */}
+          <motion.div {...scaleIn} className="lg:hidden flex justify-center mb-8">
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-full bg-primary/15 blur-2xl" />
+              <div className="absolute -inset-3 rounded-full border border-primary/10 bg-primary/5 backdrop-blur-[2px]" />
+              <img
+                src={siteConfig.portrait}
+                alt={siteConfig.name.en}
+                onError={handleImageError}
+                className="relative w-36 h-36 sm:w-44 sm:h-44 object-cover rounded-full shadow-xl shadow-primary/20"
+              />
+            </div>
+          </motion.div>
+
+          <motion.p {...fadeUp} className="text-primary font-medium mb-3 text-xs sm:text-sm tracking-widest uppercase">
             {siteConfig.availability[lang]}
           </motion.p>
-          <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+          <motion.h1 {...fadeUp} transition={{ duration: 0.6, delay: 0.1 }} className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4">
             {siteConfig.name[lang]}
           </motion.h1>
-          <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-lg text-muted-foreground mb-2">
+          <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.2 }} className="text-base sm:text-lg text-muted-foreground mb-2">
             {siteConfig.title[lang]}
           </motion.p>
-          <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="text-muted-foreground max-w-lg mb-8">
+          <motion.p {...fadeUp} transition={{ duration: 0.6, delay: 0.3 }} className="text-sm sm:text-base text-muted-foreground max-w-lg mb-6 sm:mb-8">
             {siteConfig.tagline[lang]}
           </motion.p>
-          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="flex flex-wrap gap-3 mb-4">
-            <Button asChild size="lg">
+          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.4 }} className="flex flex-col sm:flex-row flex-wrap gap-3 mb-4">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to={`/${lang}/contact`}>{siteConfig.cta.primary[lang]}</Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
+            <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
               <Link to={`/${lang}/contact`}>{siteConfig.cta.secondary[lang]}</Link>
             </Button>
           </motion.div>
-          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.45 }} className="mb-8">
+          <motion.div {...fadeUp} transition={{ duration: 0.6, delay: 0.45 }} className="mb-6 sm:mb-8">
             <Button asChild variant="ghost" size="sm">
               <a href={siteConfig.cvDownloadPath} download>
                 <Download className="h-4 w-4" />
@@ -97,24 +111,34 @@ const Home = () => {
             })}
           </motion.div>
         </div>
+
+        {/* Desktop portrait — diagonal section */}
         <div className="hidden lg:flex flex-1 items-center justify-center relative bg-primary/5"
           style={{ clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0 100%)' }}>
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-primary/5" />
-          <motion.div {...scaleIn}>
-            <img src={siteConfig.portrait} alt={siteConfig.name.en} onError={handleImageError}
-              className="w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-2xl border-2 border-primary/20 shadow-2xl" />
+          <motion.div {...scaleIn} className="relative">
+            {/* Radial glow */}
+            <div className="absolute -inset-10 rounded-full bg-primary/20 blur-3xl" />
+            {/* Glassmorphism ring */}
+            <div className="absolute -inset-4 rounded-full border border-primary/10 bg-white/5 dark:bg-white/[0.02] backdrop-blur-[2px]" />
+            <img
+              src={siteConfig.portrait}
+              alt={siteConfig.name.en}
+              onError={handleImageError}
+              className="relative w-72 h-72 lg:w-80 lg:h-80 object-cover rounded-full shadow-2xl shadow-primary/25"
+            />
           </motion.div>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="py-12 border-y border-border/40 bg-card/50">
+      <section className="py-8 sm:py-12 border-y border-border/40 bg-card/50">
         <div className="container">
-          <motion.div {...staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <motion.div {...staggerContainer} className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center">
             {siteConfig.stats.map((stat, i) => (
               <motion.div key={i} {...staggerItem} className="space-y-1">
-                <div className="text-3xl font-heading font-bold text-primary">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat[lang]}</div>
+                <div className="text-2xl sm:text-3xl font-heading font-bold text-primary">{stat.value}</div>
+                <div className="text-xs sm:text-sm text-muted-foreground">{stat[lang]}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -122,21 +146,21 @@ const Home = () => {
       </section>
 
       {/* Services */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="container">
-          <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">{t[lang].servicesTitle}</motion.h2>
-          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.h2 {...fadeUp} className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">{t[lang].servicesTitle}</motion.h2>
+          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {services.map((service) => {
               const Icon = serviceIcons[service.icon as keyof typeof serviceIcons];
               return (
                 <motion.div key={service.id} {...staggerItem}>
                   <Link to={`/${lang}/services`}>
                     <Card className="hover-lift glass-border h-full">
-                      <CardContent className="p-6 text-center space-y-4">
-                        <div className="mx-auto w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center">
-                          <Icon className="h-7 w-7 text-primary" />
+                      <CardContent className="p-5 sm:p-6 text-center space-y-3 sm:space-y-4">
+                        <div className="mx-auto w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                          <Icon className="h-6 w-6 sm:h-7 sm:w-7 text-primary" />
                         </div>
-                        <h3 className="font-heading text-lg font-semibold">{service.title[lang]}</h3>
+                        <h3 className="font-heading text-base sm:text-lg font-semibold">{service.title[lang]}</h3>
                         <p className="text-sm text-muted-foreground line-clamp-3">{service.desc[lang]}</p>
                       </CardContent>
                     </Card>
@@ -149,10 +173,10 @@ const Home = () => {
       </section>
 
       {/* Featured Projects */}
-      <section className="py-20 bg-card/30">
+      <section className="py-12 sm:py-20 bg-card/30">
         <div className="container">
-          <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">{t[lang].featuredTitle}</motion.h2>
-          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <motion.h2 {...fadeUp} className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">{t[lang].featuredTitle}</motion.h2>
+          <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {projects.filter(p => p.featured).slice(0, 6).map((project) => (
               <motion.div key={project.slug} {...staggerItem}>
                 <Link to={`/${lang}/projects`}>
@@ -166,12 +190,12 @@ const Home = () => {
                         </div>
                       )}
                     </div>
-                    <CardContent className="p-5 space-y-3">
-                      <h3 className="font-heading font-semibold">{project.title[lang]}</h3>
-                      <p className="text-sm text-muted-foreground line-clamp-2">{project.description[lang]}</p>
-                      <div className="flex flex-wrap gap-1.5">
+                    <CardContent className="p-4 sm:p-5 space-y-2 sm:space-y-3">
+                      <h3 className="font-heading font-semibold text-sm sm:text-base">{project.title[lang]}</h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground line-clamp-2">{project.description[lang]}</p>
+                      <div className="flex flex-wrap gap-1 sm:gap-1.5">
                         {project.tags.map(tag => (
-                          <span key={tag} className="text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">{tag}</span>
+                          <span key={tag} className="text-[10px] sm:text-xs px-2 py-0.5 rounded-full bg-primary/10 text-primary">{tag}</span>
                         ))}
                       </div>
                     </CardContent>
@@ -180,7 +204,7 @@ const Home = () => {
               </motion.div>
             ))}
           </motion.div>
-          <motion.div {...fadeUp} className="text-center mt-10">
+          <motion.div {...fadeUp} className="text-center mt-8 sm:mt-10">
             <Button asChild variant="outline">
               <Link to={`/${lang}/projects`}>{t[lang].viewAll} <ArrowRight className="h-4 w-4" /></Link>
             </Button>
@@ -189,9 +213,9 @@ const Home = () => {
       </section>
 
       {/* Process */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="container">
-          <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">{t[lang].processTitle}</motion.h2>
+          <motion.h2 {...fadeUp} className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">{t[lang].processTitle}</motion.h2>
           <motion.div {...staggerContainer} className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             {siteConfig.process.map((step, i) => (
               <motion.div key={i} {...staggerItem} className="flex items-center gap-3 md:flex-col md:text-center flex-1">
@@ -209,21 +233,21 @@ const Home = () => {
       </section>
 
       {/* Awards Preview */}
-      <section className="py-16 bg-card/30">
+      <section className="py-12 sm:py-16 bg-card/30">
         <div className="container">
           <motion.div {...fadeUp} className="text-center space-y-4">
-            <h2 className="text-3xl font-bold">{t[lang].awardsTitle}</h2>
-            <div className="flex justify-center gap-8">
+            <h2 className="text-2xl sm:text-3xl font-bold">{t[lang].awardsTitle}</h2>
+            <div className="flex justify-center gap-6 sm:gap-8">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <GraduationCap className="h-5 w-5 text-primary" />
-                <span>5+ {lang === 'en' ? 'Certificates' : 'شهادة'}</span>
+                <span className="text-sm">5+ {lang === 'en' ? 'Certificates' : 'شهادة'}</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Trophy className="h-5 w-5 text-primary" />
-                <span>3 {lang === 'en' ? 'Awards' : 'جوائز'}</span>
+                <span className="text-sm">3 {lang === 'en' ? 'Awards' : 'جوائز'}</span>
               </div>
             </div>
-            <p className="text-muted-foreground">{t[lang].awardsDesc}</p>
+            <p className="text-sm sm:text-base text-muted-foreground">{t[lang].awardsDesc}</p>
             <Button asChild variant="outline">
               <Link to={`/${lang}/awards`}>
                 {t[lang].viewAwards} <ArrowRight className="h-4 w-4" />
@@ -234,13 +258,13 @@ const Home = () => {
       </section>
 
       {/* FAQ */}
-      <section className="py-20">
+      <section className="py-12 sm:py-20">
         <div className="container max-w-3xl">
-          <motion.h2 {...fadeUp} className="text-3xl font-bold text-center mb-12">{t[lang].faqTitle}</motion.h2>
+          <motion.h2 {...fadeUp} className="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-12">{t[lang].faqTitle}</motion.h2>
           <motion.div {...fadeUp}>
             <Accordion type="single" collapsible className="space-y-2">
               {faq.map((item, i) => (
-                <AccordionItem key={i} value={`faq-${i}`} className="border rounded-lg px-4 glass-border">
+                <AccordionItem key={i} value={`faq-${i}`} className="border rounded-lg px-3 sm:px-4 glass-border">
                   <AccordionTrigger className="text-sm font-medium hover:no-underline">{item[lang].q}</AccordionTrigger>
                   <AccordionContent className="text-sm text-muted-foreground">{item[lang].a}</AccordionContent>
                 </AccordionItem>
@@ -251,13 +275,13 @@ const Home = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5" />
-        <div className="container relative text-center space-y-6">
-          <motion.h2 {...fadeUp} className="text-3xl sm:text-4xl font-bold">{t[lang].finalCta}</motion.h2>
-          <motion.p {...fadeUp} className="text-muted-foreground max-w-md mx-auto">{t[lang].finalCtaDesc}</motion.p>
+        <div className="container relative text-center space-y-4 sm:space-y-6">
+          <motion.h2 {...fadeUp} className="text-2xl sm:text-3xl md:text-4xl font-bold">{t[lang].finalCta}</motion.h2>
+          <motion.p {...fadeUp} className="text-sm sm:text-base text-muted-foreground max-w-md mx-auto">{t[lang].finalCtaDesc}</motion.p>
           <motion.div {...fadeUp}>
-            <Button asChild size="lg">
+            <Button asChild size="lg" className="w-full sm:w-auto">
               <Link to={`/${lang}/contact`}>{t[lang].getStarted} <ArrowRight className="h-4 w-4" /></Link>
             </Button>
           </motion.div>

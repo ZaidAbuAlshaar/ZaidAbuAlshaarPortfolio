@@ -33,15 +33,15 @@ const Services = () => {
   };
 
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-20">
       <SEO title={lang === 'en' ? 'Services' : 'الخدمات'} description={lang === 'en' ? 'Zaid Abu Alshaar offers Full-Stack Web Apps, AI Integration, UI/UX Design, XR/3D experiences, NFC Smart Cards, and Lectures & Workshops.' : 'يقدم زيد أبو الشعر تطبيقات ويب متكاملة وتكامل ذكاء اصطناعي وتصميم واجهات وتجارب واقع ممتد وبطاقات NFC ذكية ومحاضرات وورش عمل.'} path="services" />
       <div className="container max-w-5xl">
-        <motion.div {...fadeUp} className="text-center mb-12 space-y-3">
-          <h1 className="text-4xl font-bold">{t[lang].title}</h1>
+        <motion.div {...fadeUp} className="text-center mb-8 sm:mb-12 space-y-3">
+          <h1 className="text-3xl sm:text-4xl font-bold">{t[lang].title}</h1>
           <p className="text-muted-foreground">{t[lang].subtitle}</p>
         </motion.div>
 
-        <motion.div {...staggerContainer} className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-12">
           {services.map((service) => {
             const Icon = serviceIcons[service.icon as keyof typeof serviceIcons];
             const highlightParam = service.linkedProjectSlugs.join(',');

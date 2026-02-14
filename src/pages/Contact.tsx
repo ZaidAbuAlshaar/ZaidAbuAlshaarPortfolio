@@ -149,11 +149,11 @@ const Contact = () => {
   const preferredContact = watch('preferredContact');
 
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-20">
       <SEO title={lang === 'en' ? 'Contact' : 'تواصل'} description={lang === 'en' ? 'Get in touch with Zaid Abu Alshaar for your next project.' : 'تواصل مع زيد أبو الشعر لمشروعك القادم.'} path="contact" />
       <div className="container max-w-5xl">
-        <motion.div {...fadeUp} className="text-center mb-12 space-y-3">
-          <h1 className="text-4xl font-bold">{c.title}</h1>
+        <motion.div {...fadeUp} className="text-center mb-8 sm:mb-12 space-y-3">
+          <h1 className="text-3xl sm:text-4xl font-bold">{c.title}</h1>
           <p className="text-muted-foreground max-w-lg mx-auto">{c.subtitle}</p>
           <p className="text-xs text-muted-foreground italic">{c.pricingNote}</p>
         </motion.div>
@@ -244,13 +244,13 @@ const Contact = () => {
                     {errors.message && <p className="text-xs text-destructive">{errors.message.message}</p>}
                   </div>
 
-                  <div className="flex gap-3">
+                  <div className="flex flex-col sm:flex-row gap-3">
                     <Button type="submit" size="lg" className="flex-1" disabled={isSubmitting}>
                       {isSubmitting ? <><Loader2 className="h-4 w-4 animate-spin" /> {c.sending}</> : c.send}
                     </Button>
-                    <Button type="button" variant="outline" size="lg" onClick={handleCopy}>
+                    <Button type="button" variant="outline" size="lg" onClick={handleCopy} className="sm:flex-none">
                       {copied ? <Check className="h-4 w-4" /> : <Copy className="h-4 w-4" />}
-                      <span className="ms-1 hidden sm:inline">{c.copyMsg}</span>
+                      <span className="ms-1">{c.copyMsg}</span>
                     </Button>
                   </div>
                 </form>

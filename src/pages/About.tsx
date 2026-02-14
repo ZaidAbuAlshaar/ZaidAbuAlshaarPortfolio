@@ -34,12 +34,12 @@ const About = () => {
   const c = t[lang];
 
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-20">
       <SEO title={lang === 'en' ? 'About' : 'عني'} description={lang === 'en' ? 'Learn about Zaid Abu Alshaar — CS honors student, full-stack developer, AI & AR/VR specialist based in Amman, Jordan.' : 'تعرّف على زيد أبو الشعر — طالب علوم حاسوب متفوق ومطوّر متكامل ومتخصص في الذكاء الاصطناعي والواقع المعزز من عمّان.'} path="about" />
-      <div className="container max-w-4xl space-y-16">
+      <div className="container max-w-4xl space-y-10 sm:space-y-16">
         {/* Bio */}
         <motion.div {...fadeUp} className="space-y-4">
-          <h1 className="text-4xl font-bold">{c.title}</h1>
+          <h1 className="text-3xl sm:text-4xl font-bold">{c.title}</h1>
           <div className="flex flex-col md:flex-row gap-8">
             <div className="md:w-1/3 flex flex-col items-center gap-3">
               <img src={siteConfig.portrait} alt={siteConfig.name[lang]} onError={handleImageError}
@@ -65,7 +65,7 @@ const About = () => {
 
         {/* Education */}
         <motion.div {...fadeUp} className="space-y-4">
-          <h2 className="text-2xl font-bold">{c.eduTitle}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">{c.eduTitle}</h2>
           <Card className="glass-border">
             <CardContent className="p-6 flex items-start gap-4">
               <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
@@ -82,7 +82,7 @@ const About = () => {
 
         {/* Skills */}
         <motion.div {...fadeUp} className="space-y-6">
-          <h2 className="text-2xl font-bold">{c.skillsTitle}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">{c.skillsTitle}</h2>
           <motion.div {...staggerContainer} className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {siteConfig.skills.map((skill) => (
               <motion.div key={skill} {...staggerItem}
@@ -95,7 +95,7 @@ const About = () => {
 
         {/* Experience */}
         <motion.div {...fadeUp} className="space-y-6">
-          <h2 className="text-2xl font-bold">{c.expTitle}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">{c.expTitle}</h2>
           <div className="space-y-4">
             {siteConfig.experiences[lang].map((exp, i) => (
               <motion.div key={i} {...staggerItem}>
@@ -116,7 +116,7 @@ const About = () => {
 
         {/* Involvement */}
         <motion.div {...fadeUp} className="space-y-4">
-          <h2 className="text-2xl font-bold">{c.invTitle}</h2>
+          <h2 className="text-xl sm:text-2xl font-bold">{c.invTitle}</h2>
           <ul className="space-y-2">
             {siteConfig.involvement[lang].map((item, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">

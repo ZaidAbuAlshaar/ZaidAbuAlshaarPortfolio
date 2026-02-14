@@ -87,7 +87,7 @@ const Projects = () => {
   const c = t[lang];
 
   return (
-    <div className="py-20">
+    <div className="py-12 sm:py-20">
       <SEO
         title={lang === 'en' ? 'Projects' : 'المشاريع'}
         description={
@@ -98,13 +98,13 @@ const Projects = () => {
         path="projects"
       />
       <div className="container max-w-6xl">
-        <motion.div {...fadeUp} className="text-center mb-12 space-y-3">
-          <h1 className="text-4xl font-bold">{c.title}</h1>
+        <motion.div {...fadeUp} className="text-center mb-8 sm:mb-12 space-y-3">
+          <h1 className="text-3xl sm:text-4xl font-bold">{c.title}</h1>
           <p className="text-muted-foreground">{c.subtitle}</p>
         </motion.div>
 
         {/* Search + Filters */}
-        <motion.div {...fadeUp} className="space-y-4 mb-10">
+        <motion.div {...fadeUp} className="space-y-4 mb-6 sm:mb-10">
           <div className="relative max-w-md mx-auto">
             <Search className="absolute start-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
@@ -143,7 +143,7 @@ const Projects = () => {
             {filtered.length === 0 && activeComingSoon.length === 0 ? (
               <p className="text-center text-muted-foreground py-12">{c.noResults}</p>
             ) : (
-              <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <motion.div {...staggerContainer} className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 {filtered.map((project) => {
                   const isExpanded = expandedProject === project.slug;
                   const isHighlighted = highlightedSlugs.includes(project.slug);

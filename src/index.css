@@ -49,9 +49,13 @@
   * {
     @apply border-border;
   }
+  html {
+    overflow-x: hidden;
+  }
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
   }
 }
 

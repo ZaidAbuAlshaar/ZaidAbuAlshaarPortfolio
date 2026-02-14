@@ -9,3 +9,4 @@ dist
 vite.config.d.ts
 vite.config.js
 nul
+.claude/
