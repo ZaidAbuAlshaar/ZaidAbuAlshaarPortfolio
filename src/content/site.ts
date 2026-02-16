@@ -1,3 +1,5 @@
+import { publicUrl } from '@/lib/assets';
+
 export type Lang = 'en' | 'ar';
 export type Bilingual = { en: string; ar: string };
 
@@ -26,8 +28,8 @@ export const siteConfig = {
     ar: 'مطوّر متكامل ومتخصص بالذكاء الاصطناعي',
   } as Bilingual,
 
-  portrait: '/images/ZaidAbuAlshaar.png',
-  cvDownloadPath: '/cv/Zaid_Abu_Alshaar_CV.pdf',
+  portrait: publicUrl('/images/ZaidAbuAlshaar.png'),
+  cvDownloadPath: publicUrl('/cv/Zaid_Abu_Alshaar_CV.pdf'),
 
   email: 'abualshaarzaid@gmail.com',
   phone: '962799569573',
@@ -42,7 +44,7 @@ export const siteConfig = {
       en: 'Zaid Abu Alshaar — Full-Stack Developer, AI Integration Specialist, and AR/VR Creator based in Amman, Jordan. Building web apps, AI agents, and immersive experiences.',
       ar: 'زيد أبو الشعر — مطوّر متكامل ومتخصص في الذكاء الاصطناعي والواقع المعزز من عمّان، الأردن. بناء تطبيقات ويب ووكلاء ذكاء اصطناعي وتجارب غامرة.',
     } as Bilingual,
-    ogImage: '/images/ZaidAbuAlshaar.png',
+    ogImage: publicUrl('/images/ZaidAbuAlshaar.png'),
   },
 
   socialLinks: [

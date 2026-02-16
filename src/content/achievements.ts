@@ -1,3 +1,5 @@
+import { publicUrl } from '@/lib/assets';
+
 export interface Achievement {
   id: string;
   title: { en: string; ar: string };
@@ -21,9 +23,9 @@ export const achievements: Achievement[] = [
     year: 2025,
     category: 'award',
     media: [
-      '/images/ZaidAbuAlshaar1.jpg',
-      '/images/ZaidAbuAlshaar2.JPG',
-      '/images/Gemini_Generated_Image_cinj1ocinj1ocinj-Photoroom.png',
+      publicUrl('/images/ZaidAbuAlshaar1.jpg'),
+      publicUrl('/images/ZaidAbuAlshaar2.JPG'),
+      publicUrl('/images/Gemini_Generated_Image_cinj1ocinj1ocinj-Photoroom.png'),
     ],
   },
   {
@@ -37,11 +39,11 @@ export const achievements: Achievement[] = [
     year: 2025,
     category: 'award',
     media: [
-      '/images/ZaidAbuAlshaar4.JPG',
-      '/images/ZaidAbuAlshaar3.JPG',
-      '/images/WhatsApp Image 2025-12-28 at 7.22.37 PM.jpeg',
-      '/images/IMG_2026012419023511.MP4',
-      '/images/IMG_5421.jpg',
+      publicUrl('/images/ZaidAbuAlshaar4.JPG'),
+      publicUrl('/images/ZaidAbuAlshaar3.JPG'),
+      publicUrl('/images/WhatsApp Image 2025-12-28 at 7.22.37 PM.jpeg'),
+      publicUrl('/images/IMG_2026012419023511.MP4'),
+      publicUrl('/images/IMG_5421.jpg'),
     ],
   },
   {
@@ -55,8 +57,8 @@ export const achievements: Achievement[] = [
     year: 2025,
     category: 'award',
     media: [
-      '/images/IMG_202601241902351.JPG',
-      '/images/IMG_2026012419023512.MP4',
+      publicUrl('/images/IMG_202601241902351.JPG'),
+      publicUrl('/images/IMG_2026012419023512.MP4'),
     ],
   },
 

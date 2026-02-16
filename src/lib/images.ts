@@ -1,11 +1,13 @@
-const PLACEHOLDER = '/placeholder.svg';
+import { publicUrl } from '@/lib/assets';
+
+const PLACEHOLDER = publicUrl('/placeholder.svg');
 
 export function getProjectImage(slug: string, index = 1): string {
-  return `/images/projects/${slug}-${index}.jpg`;
+  return publicUrl(`/images/projects/${slug}-${index}.jpg`);
 }
 
 export function getAchievementImage(id: string, index = 1): string {
-  return `/images/achievements/${id}-${index}.jpg`;
+  return publicUrl(`/images/achievements/${id}-${index}.jpg`);
 }
 
 export function getPlaceholder(): string {
@@ -14,7 +16,7 @@ export function getPlaceholder(): string {
 
 export function handleImageError(e: React.SyntheticEvent<HTMLImageElement>) {
   const target = e.currentTarget;
-  if (!target.src.endsWith(PLACEHOLDER)) {
+  if (!target.src.endsWith('placeholder.svg')) {
     target.src = PLACEHOLDER;
   }
 }

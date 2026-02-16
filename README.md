@@ -11,6 +11,31 @@ npm run build      # production build → dist/
 npm run preview    # preview production build
 ```
 
+## Deployment (GitHub Pages)
+
+The site auto-deploys to GitHub Pages on every push to `main` via the workflow in `.github/workflows/deploy.yml`.
+
+**Live URL:** `https://ZaidAbuAlshaar.github.io/ZaidAbuAlshaarPortfolio/`
+
+### First-time setup
+
+1. Go to **Settings > Pages** in your GitHub repo.
+2. Under **Source**, select **GitHub Actions**.
+3. Push to `main` — the workflow will build and deploy automatically.
+
+### How it works
+
+- The workflow sets `VITE_BASE=/ZaidAbuAlshaarPortfolio/` so all assets load from the correct subpath.
+- `dist/index.html` is copied to `dist/404.html` so SPA client-side routing works on refresh.
+- Local dev (`npm run dev`) is unaffected — base defaults to `/`.
+
+### Switching to a custom domain
+
+1. In **Settings > Pages > Custom domain**, enter your domain (e.g. `zaidabualshaar.com`).
+2. Add a `CNAME` DNS record pointing to `ZaidAbuAlshaar.github.io`.
+3. In `.github/workflows/deploy.yml`, remove the `VITE_BASE` env variable (or set it to `/`).
+4. Push — the site will now load from your custom domain root.
+
 ## Contact Form Setup (Formspree)
 
 The contact form includes a **Preferred Contact Method** selector (WhatsApp or Email, default WhatsApp).

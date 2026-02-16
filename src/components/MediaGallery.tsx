@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { handleImageError } from '@/lib/images';
+import { handleImageError, getPlaceholder } from '@/lib/images';
 
 interface MediaGalleryProps {
   items: string[];
@@ -18,7 +18,7 @@ const MediaGallery = ({ items, alt }: MediaGalleryProps) => {
   if (!items.length) {
     return (
       <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-        <img src="/placeholder.svg" alt={alt} className="w-24 h-24 opacity-40" />
+        <img src={getPlaceholder()} alt={alt} className="w-24 h-24 opacity-40" />
       </div>
     );
   }
