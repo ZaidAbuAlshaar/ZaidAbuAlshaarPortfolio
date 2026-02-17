@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE: /ZaidAbuAlshaarPortfolio/
+          VITE_BASE: /
 
       - name: Copy index.html to 404.html (SPA fallback)
         run: cp dist/index.html dist/404.html
