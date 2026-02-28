@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Projects Gallery Images & Certifications Pages -->
+  
+  <!-- Projects Page EN & AR -->
+  <url>
+    <loc>https://zaidabualshaar.com/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/projects" />
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-1.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-2.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-3.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-4.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-5.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-6.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-7.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/palmGuard-8.jpg</image:loc>
+      <image:title>PalmGuard — Palm Weevil Detection Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-1.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-2.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-3.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-4.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-5.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-6.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-7.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/uniflow-8.jpg</image:loc>
+      <image:title>Uniflow — Intelligent University Assistant Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-1.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-2.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-3.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-4.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-5.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-6.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-7.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/VR-ARClub-8.jpg</image:loc>
+      <image:title>VR and AR Club Platform Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-1.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-2.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-3.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-4.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-5.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-6.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-7.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyTimer-8.jpg</image:loc>
+      <image:title>Healthy Timer Mobile App Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-1.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-2.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-3.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-4.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-5.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-6.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-7.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/HealthyCalculator-8.jpg</image:loc>
+      <image:title>Healthy Calculator Mobile App Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-1.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-2.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-3.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-4.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-5.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-6.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-7.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/nfc-project-8.jpg</image:loc>
+      <image:title>NFC Smart Card System Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-1.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-2.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-3.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-4.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-5.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-6.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-7.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/PythonWithZaid-8.jpg</image:loc>
+      <image:title>Python With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-1.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-2.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-3.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-4.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-5.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-6.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-7.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/JavaWithZaid-8.jpg</image:loc>
+      <image:title>Java With Zaid Learning Platform Project Gallery</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-1.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-2.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-3.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-4.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-5.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-6.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-7.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/projects/impact-2025-lecture-8.jpg</image:loc>
+      <image:title>IMPACT 2025 VR in Gaming Lecture Project Gallery</image:title>
+    </image:image>
+  </url>
+
+  <!-- Awards & Certifications Gallery Images -->
+  <url>
+    <loc>https://zaidabualshaar.com/en/awards</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/awards" />
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/ZaidAbuAlshaar1.jpg</image:loc>
+      <image:title>IEEE Sustainable Tech Hackathon Award Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/ZaidAbuAlshaar2.JPG</image:loc>
+      <image:title>IEEE Sustainable Tech Hackathon Award Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/Gemini_Generated_Image_cinj1ocinj1ocinj-Photoroom.png</image:loc>
+      <image:title>IEEE Sustainable Tech Hackathon Award Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/ZaidAbuAlshaar4.JPG</image:loc>
+      <image:title>Best Innovation Award PalmGuard Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/ZaidAbuAlshaar3.JPG</image:loc>
+      <image:title>Best Innovation Award PalmGuard Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/WhatsApp%20Image%202025-12-28%20at%207.22.37%20PM.jpeg</image:loc>
+      <image:title>Best Innovation Award PalmGuard Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/IMG_5421.jpg</image:loc>
+      <image:title>Best Innovation Award PalmGuard Gallery</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://zaidabualshaar.com/images/IMG_202601241902351.JPG</image:loc>
+      <image:title>Data Cleaning Competition Award Gallery</image:title>
+    </image:image>
+  </url>
+
+  <!-- Certifications Page -->
+  <url>
+    <loc>https://zaidabualshaar.com/en/certifications</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/certifications" />
+  </url>
+
+</urlset>
