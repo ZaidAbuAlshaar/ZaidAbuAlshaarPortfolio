@@ -9,6 +9,8 @@ import Certifications from '@/pages/Certifications';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 import Layout from '@/components/Layout';
+import AdminGuard from '@/pages/admin/AdminGuard';
+import AdminDashboard from '@/pages/admin/AdminDashboard';
 
 const App = () => {
   const { lang } = useLanguage();
@@ -24,6 +26,9 @@ const App = () => {
         <Route path="awards" element={<Awards />} />
         <Route path="certifications" element={<Certifications />} />
         <Route path="contact" element={<Contact />} />
+      </Route>
+      <Route path="/admin" element={<AdminGuard />}>
+        <Route index element={<AdminDashboard />} />
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
