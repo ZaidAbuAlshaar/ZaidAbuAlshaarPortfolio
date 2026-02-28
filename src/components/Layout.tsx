@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Outlet, useParams, Link, useNavigate, useLocation } from 'react-router-dom';
 import { Download, Menu, X, Github, Linkedin, Mail, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -36,10 +36,6 @@ const Layout = () => {
 
   if (paramLang === 'ar' && lang !== 'ar') setLang('ar');
   if (paramLang === 'en' && lang !== 'en') setLang('en');
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
 
   const toggleLang = () => {
     const newLang = lang === 'en' ? 'ar' : 'en';

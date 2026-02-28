@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { useSupabaseAchievements } from '@/hooks/useSupabaseAchievements';
+import { getAchievementsByCategory } from '@/content/achievements';
 import MediaGallery from '@/components/MediaGallery';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
 import SEO from '@/components/SEO';
@@ -22,8 +22,7 @@ const comingSoonItems = [
 const Awards = () => {
   const { lang } = useLanguage();
   const [galleryItem, setGalleryItem] = useState<string | null>(null);
-  const allAchievements = useSupabaseAchievements();
-  const awards = allAchievements.filter((a) => a.category === 'award');
+  const awards = getAchievementsByCategory('award');
 
   const t = {
     en: {
