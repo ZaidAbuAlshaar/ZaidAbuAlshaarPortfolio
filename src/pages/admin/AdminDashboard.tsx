@@ -1,88 +1,51 @@
 import { useNavigate } from 'react-router-dom';
-import { Trophy, FolderOpen, FileText, LogOut } from 'lucide-react';
+import { Trophy, FolderOpen, FileText } from 'lucide-react';
+
+const sections = [
+  {
+    icon: Trophy,
+    label: 'Achievements',
+    description: 'Awards, certifications, and experience highlights',
+    path: '/admin/achievements',
+  },
+  {
+    icon: FolderOpen,
+    label: 'Projects',
+    description: 'Portfolio projects with images and links',
+    path: '/admin/projects',
+  },
+  {
+    icon: FileText,
+    label: 'Content',
+    description: 'Bio, tagline, and skills',
+    path: '/admin/content',
+  },
+];
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem('admin_auth');
-    window.location.reload();
-  };
-
-  const sections = [
-    {
-      icon: Trophy,
-      label: 'Achievements',
-      description: 'Add, edit, or delete achievements',
-      path: '/admin/achievements',
-      available: false,
-    },
-    {
-      icon: FolderOpen,
-      label: 'Projects',
-      description: 'Add, edit, or delete projects',
-      path: '/admin/projects',
-      available: false,
-    },
-    {
-      icon: FileText,
-      label: 'Content',
-      description: 'Edit bio, skills, and experiences',
-      path: '/admin/content',
-      available: false,
-    },
-  ];
-
   return (
-    <div className="min-h-screen bg-zinc-950 p-6">
-      {/* Header */}
-      <div className="max-w-3xl mx-auto">
-        <div className="flex items-center justify-between mb-10">
-          <div>
-            <h1 className="text-2xl font-semibold text-white">Admin Dashboard</h1>
-            <p className="text-sm text-zinc-500 mt-1">Manage your portfolio content</p>
-          </div>
+    <div className="p-6 max-w-2xl">
+      <h1 className="text-2xl font-semibold text-white mb-1">Dashboard</h1>
+      <p className="text-sm text-zinc-500 mb-8">Choose a section to manage.</p>
+
+      <div className="grid gap-3">
+        {sections.map(({ icon: Icon, label, description, path }) => (
           <button
-            onClick={handleLogout}
-            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-zinc-700 text-zinc-400 hover:text-white hover:border-zinc-500 transition-colors text-sm"
+            key={label}
+            onClick={() => navigate(path)}
+            className="flex items-center gap-4 p-5 rounded-xl border border-zinc-800 bg-zinc-900 hover:border-yellow-400/60 hover:bg-zinc-800/60 text-left transition-colors"
           >
-            <LogOut className="w-4 h-4" />
-            Logout
+            <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
+              <Icon className="w-5 h-5 text-yellow-400" />
+            </div>
+            <div>
+              <p className="text-white font-medium text-sm">{label}</p>
+              <p className="text-zinc-500 text-xs">{description}</p>
+            </div>
           </button>
-        </div>
-
-        {/* Section cards */}
-        <div className="grid gap-4">
-          {sections.map(({ icon: Icon, label, description, path, available }) => (
-            <button
-              key={label}
-              onClick={() => available && navigate(path)}
-              disabled={!available}
-              className={`flex items-center gap-4 p-5 rounded-xl border text-left transition-colors ${
-                available
-                  ? 'bg-zinc-900 border-zinc-700 hover:border-yellow-400 cursor-pointer'
-                  : 'bg-zinc-900/50 border-zinc-800 cursor-not-allowed opacity-50'
-              }`}
-            >
-              <div className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-5 h-5 text-yellow-400" />
-              </div>
-              <div>
-                <p className="text-white font-medium">{label}</p>
-                <p className="text-zinc-500 text-sm">{description}</p>
-              </div>
-              {!available && (
-                <span className="ml-auto text-xs text-zinc-600 border border-zinc-700 rounded px-2 py-0.5">
-                  Coming soon
-                </span>
-              )}
-            </button>
-          ))}
-        </div>
-
-        <p className="text-center text-zinc-700 text-xs mt-10">
-          <a href="/en" className="hover:text-zinc-500 transition-colors">← View portfolio</a>
-        </p>
+        ))}
       </div>
     </div>
   );

@@ -10,7 +10,11 @@ import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 import Layout from '@/components/Layout';
 import AdminGuard from '@/pages/admin/AdminGuard';
+import AdminLayout from '@/pages/admin/AdminLayout';
 import AdminDashboard from '@/pages/admin/AdminDashboard';
+import AchievementsAdmin from '@/pages/admin/achievements/AchievementsAdmin';
+import ProjectsAdmin from '@/pages/admin/projects/ProjectsAdmin';
+import ContentAdmin from '@/pages/admin/content/ContentAdmin';
 
 const App = () => {
   const { lang } = useLanguage();
@@ -28,7 +32,12 @@ const App = () => {
         <Route path="contact" element={<Contact />} />
       </Route>
       <Route path="/admin" element={<AdminGuard />}>
-        <Route index element={<AdminDashboard />} />
+        <Route element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="achievements" element={<AchievementsAdmin />} />
+          <Route path="projects" element={<ProjectsAdmin />} />
+          <Route path="content" element={<ContentAdmin />} />
+        </Route>
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>
