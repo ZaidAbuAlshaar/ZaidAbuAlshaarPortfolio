@@ -1,0 +1,40 @@
+<!--
+  SUBDOMAIN BACKLINK SNIPPET
+  ===========================
+  Add this block to the header OR footer of python.zaiddev.com and java.zaiddev.com.
+  It provides:
+    • A visible link back to the main portfolio (helps Google find & trust zaiddev.com/ar)
+    • The Arabic name as real text so Google associates the subdomain with Arabic searches
+    • A rel="author" signal tying the subdomain to the portfolio owner
+
+  Minimal, non-intrusive — adapt styling to match each subdomain.
+  DO NOT add noindex or nofollow; both subdomains should remain indexable.
+-->
+
+<!-- Place near the top of <head> on both subdomains -->
+<link rel="author" href="https://zaiddev.com" />
+<link rel="me"     href="https://zaiddev.com" />
+
+<!-- Place in the page footer (visible HTML, not hidden) -->
+<footer style="text-align:center; padding:1rem; font-size:0.8rem; opacity:0.7;">
+  <p>
+    A project by
+    <a href="https://zaiddev.com/en" hreflang="en">Zaid Abu Alshaar</a>
+    /
+    <a href="https://zaiddev.com/ar" hreflang="ar" lang="ar" dir="rtl">زيد أبو الشعر</a>
+    — Full-Stack Developer &amp; AI Specialist
+  </p>
+</footer>
+
+<!--
+  INSTRUCTIONS
+  ────────────
+  1. Open the <head> of each subdomain's index.html (or layout template).
+  2. Paste the two <link> tags above inside <head>.
+  3. Paste the <footer> block at the bottom of <body> (or merge into existing footer).
+  4. For python.zaiddev.com, also add to <head>:
+       <meta name="description" content="Python projects by Zaid Abu Alshaar (زيد أبو الشعر) — Full-Stack Developer. More at zaiddev.com." />
+  5. For java.zaiddev.com, add:
+       <meta name="description" content="Java projects by Zaid Abu Alshaar (زيد أبو الشعر) — Full-Stack Developer. More at zaiddev.com." />
+  6. Rebuild and deploy each subdomain.
+-->
