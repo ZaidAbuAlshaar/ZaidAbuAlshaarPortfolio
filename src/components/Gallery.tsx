@@ -11,7 +11,7 @@ interface GalleryProps {
 
 const Gallery = ({ basePath, alt, maxImages = 8 }: GalleryProps) => {
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
-  const [failedImages, setFailedImages] = useState<string[]>([]);
+  const [failedCount, setFailedCount] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const allPaths = Array.from({ length: maxImages }, (_, i) => `${basePath}-${i + 1}.jpg`);
@@ -20,11 +20,11 @@ const Gallery = ({ basePath, alt, maxImages = 8 }: GalleryProps) => {
     setLoadedImages((prev) => (prev.includes(src) ? prev : [...prev, src]));
   }, []);
 
-  const handleError = useCallback((src: string) => {
-    setFailedImages((prev) => (prev.includes(src) ? prev : [...prev, src]));
+  const handleError = useCallback(() => {
+    setFailedCount((prev) => prev + 1);
   }, []);
 
-  const showPlaceholder = failedImages.length >= maxImages && loadedImages.length === 0;
+  const showPlaceholder = failedCount >= maxImages && loadedImages.length === 0;
 
   return (
     <>
@@ -35,37 +35,26 @@ const Gallery = ({ basePath, alt, maxImages = 8 }: GalleryProps) => {
           </div>
         )}
 
-        {allPaths.map((src, i) => {
-          const isLoaded = loadedImages.includes(src);
-          const isFailed = failedImages.includes(src);
-          
-          return (
-            <motion.div
-              key={src}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: i * 0.05 }}
-              className={`aspect-video bg-muted rounded-lg overflow-hidden cursor-pointer transition-opacity ${
-                isFailed ? 'opacity-20 cursor-default' : 'hover:opacity-90'
-              }`}
-              onClick={() => {
-                if (isLoaded) {
-                  setLightboxIndex(loadedImages.indexOf(src));
-                }
-              }}
-            >
-              <img
-                src={src}
-                alt={`${alt} – Image ${i + 1}`}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-                decoding="async"
-                onLoad={() => handleLoad(src)}
-                onError={() => handleError(src)}
-              />
-            </motion.div>
-          );
-        })}
+        {allPaths.map((src, i) => (
+          <motion.div
+            key={src}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.4, delay: i * 0.05 }}
+            className={`aspect-video bg-muted rounded-lg overflow-hidden cursor-pointer ${
+              !loadedImages.includes(src) ? 'hidden' : ''
+            }`}
+            onClick={() => setLightboxIndex(loadedImages.indexOf(src))}
+          >
+            <img
+              src={src}
+              alt={`${alt} ${i + 1}`}
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              onLoad={() => handleLoad(src)}
+              onError={handleError}
+            />
+          </motion.div>
+        ))}
       </div>
 
       {/* Lightbox */}

@@ -41,15 +41,12 @@ const MediaGallery = ({ items, alt }: MediaGalleryProps) => {
                 muted
                 className="w-full h-full object-cover"
                 preload="metadata"
-                title={`${alt} – Video ${i + 1}`}
               />
             ) : (
               <img
                 src={src}
-                alt={`${alt} – Image ${i + 1}`}
+                alt={`${alt} ${i + 1}`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                loading="lazy"
-                decoding="async"
                 onError={handleImageError}
               />
             )}

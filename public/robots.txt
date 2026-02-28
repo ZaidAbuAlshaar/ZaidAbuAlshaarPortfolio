@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://zaiddev.com/sitemap.xml
-Sitemap: https://zaiddev.com/sitemap-image.xml
