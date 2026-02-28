@@ -195,7 +195,7 @@ const Layout = () => {
               </div>
             </div>
 
-            {/* Col 4: CV */}
+            {/* Col 4: Resources + subdomain back-links */}
             <div className="space-y-3">
               <h4 className="font-heading font-semibold text-sm">
                 {lang === 'en' ? 'Resources' : 'موارد'}
@@ -206,6 +206,24 @@ const Layout = () => {
                   <span className="ms-1">{siteConfig.cta.cv[lang]}</span>
                 </a>
               </Button>
+              <div className="flex flex-col gap-1 pt-1">
+                <a
+                  href="https://python.zaiddev.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                >
+                  python.zaiddev.com ↗
+                </a>
+                <a
+                  href="https://java.zaiddev.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs text-muted-foreground hover:text-primary transition-colors"
+                >
+                  java.zaiddev.com ↗
+                </a>
+              </div>
             </div>
           </div>
 

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" dir="ltr" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/favicon.png" />
@@ -7,9 +7,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <title>Zaid Abu Alshaar — Full-Stack Developer &amp; AI Specialist</title>
-    <meta name="description" content="Zaid Abu Alshaar — Full-Stack Developer, AI Integration Specialist, and AR/VR Creator based in Amman, Jordan." />
+
+    <!-- Primary meta (English default — overridden per-route by React Helmet and prerender) -->
+    <title>Zaid Abu Alshaar | زيد أبو الشعر — Full-Stack Developer &amp; AI Specialist</title>
+    <meta name="description" content="Zaid Abu Alshaar (زيد أبو الشعر) — Full-Stack Developer, AI Integration Specialist, and AR/VR Creator based in Amman, Jordan. Building web apps, AI agents, and immersive experiences." />
     <meta name="author" content="Zaid Abu Alshaar" />
+
+    <!-- Canonical (root redirects to /en; language pages override via Helmet) -->
+    <link rel="canonical" href="https://zaiddev.com/en" />
+
+    <!-- hreflang — tells Google about both language versions from every page -->
+    <link rel="alternate" hreflang="en" href="https://zaiddev.com/en" />
+    <link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar" />
+    <link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -19,26 +29,56 @@
         {
           "@type": "Person",
           "name": "Zaid Abu Alshaar",
-          "alternateName": "زيد أبو الشعر",
-          "url": "https://zaidabualshaar.com",
-          "image": "https://zaidabualshaar.com/images/ZaidAbuAlshaar.png",
+          "alternateName": [
+            "Zaid Abu Alshaar",
+            "زيد أبو الشعر",
+            "زيد ابو الشعر",
+            "Zaid AbuAlshaar",
+            "زيد أبوالشعر"
+          ],
+          "url": "https://zaiddev.com",
+          "image": "https://zaiddev.com/images/ZaidAbuAlshaar.png",
           "jobTitle": "Full-Stack Developer & AI Specialist",
           "worksFor": { "@type": "Organization", "name": "Freelance" },
           "address": { "@type": "PostalAddress", "addressLocality": "Amman", "addressCountry": "JO" },
           "email": "abualshaarzaid@gmail.com",
           "telephone": "+962799569573",
           "sameAs": [
+            "https://zaiddev.com",
+            "https://zaiddev.com/ar",
+            "https://python.zaiddev.com",
+            "https://java.zaiddev.com",
             "https://github.com/ZaidAbuAlshaar",
             "https://www.linkedin.com/in/zaid-abu-alshaar-93765a3a1/"
           ],
-          "knowsAbout": ["Full-Stack Development", "AI Integration", "AR/VR", "UI/UX Design", "Python", "TypeScript", "React", "Unity", "NFC"]
+          "knowsAbout": [
+            "Full-Stack Development",
+            "AI Integration",
+            "AR/VR",
+            "UI/UX Design",
+            "Python",
+            "TypeScript",
+            "React",
+            "Unity",
+            "NFC"
+          ],
+          "knowsLanguage": ["en", "ar"]
         },
         {
           "@type": "WebSite",
           "name": "Zaid Abu Alshaar Portfolio",
-          "url": "https://zaidabualshaar.com",
+          "alternateName": "زيد أبو الشعر - معرض الأعمال",
+          "url": "https://zaiddev.com",
           "inLanguage": ["en", "ar"],
-          "author": { "@type": "Person", "name": "Zaid Abu Alshaar" }
+          "author": { "@type": "Person", "name": "Zaid Abu Alshaar" },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://zaiddev.com/en/projects?search={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         }
       ]
     }

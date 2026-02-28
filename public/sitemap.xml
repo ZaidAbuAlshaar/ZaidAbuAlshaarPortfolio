@@ -1,88 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Root — redirects to /en, listed for completeness -->
   <url>
-    <loc>https://zaidabualshaar.com/en</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar" />
+    <loc>https://zaiddev.com/</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Home — English -->
   <url>
-    <loc>https://zaidabualshaar.com/ar</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en" />
+    <loc>https://zaiddev.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar" />
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- Home — Arabic -->
   <url>
-    <loc>https://zaidabualshaar.com/en/services</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/services" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <loc>https://zaiddev.com/ar</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar" />
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
+
+  <!-- Projects — English -->
   <url>
-    <loc>https://zaidabualshaar.com/ar/services</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en/services" />
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://zaidabualshaar.com/en/projects</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/projects" />
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://zaidabualshaar.com/ar/projects</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en/projects" />
+    <loc>https://zaiddev.com/en/projects</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/projects" />
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+
+  <!-- Projects — Arabic -->
   <url>
-    <loc>https://zaidabualshaar.com/en/awards</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/awards" />
+    <loc>https://zaiddev.com/ar/projects</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/projects" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/projects" />
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services — English -->
+  <url>
+    <loc>https://zaiddev.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/services" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Services — Arabic -->
   <url>
-    <loc>https://zaidabualshaar.com/ar/awards</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en/awards" />
+    <loc>https://zaiddev.com/ar/services</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/services" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/services" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Awards — English -->
   <url>
-    <loc>https://zaidabualshaar.com/en/certifications</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/certifications" />
+    <loc>https://zaiddev.com/en/awards</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/awards" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/awards" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/awards" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Awards — Arabic -->
   <url>
-    <loc>https://zaidabualshaar.com/ar/certifications</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en/certifications" />
+    <loc>https://zaiddev.com/ar/awards</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/awards" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/awards" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/awards" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Certifications — English -->
   <url>
-    <loc>https://zaidabualshaar.com/en/about</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/about" />
+    <loc>https://zaiddev.com/en/certifications</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/certifications" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/certifications" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/certifications" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- Certifications — Arabic -->
   <url>
-    <loc>https://zaidabualshaar.com/ar/about</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en/about" />
+    <loc>https://zaiddev.com/ar/certifications</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/certifications" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/certifications" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/certifications" />
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- About — English -->
   <url>
-    <loc>https://zaidabualshaar.com/en/contact</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://zaidabualshaar.com/ar/contact" />
+    <loc>https://zaiddev.com/en/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About — Arabic -->
+  <url>
+    <loc>https://zaiddev.com/ar/about</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/about" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/about" />
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact — English -->
+  <url>
+    <loc>https://zaiddev.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- Contact — Arabic -->
   <url>
-    <loc>https://zaidabualshaar.com/ar/contact</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://zaidabualshaar.com/en/contact" />
+    <loc>https://zaiddev.com/ar/contact</loc>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://zaiddev.com/en/contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar/contact" />
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
 </urlset>
