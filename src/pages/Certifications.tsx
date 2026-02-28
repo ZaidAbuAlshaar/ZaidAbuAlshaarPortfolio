@@ -3,15 +3,14 @@ import { GraduationCap, Briefcase, Clock } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
 import { siteConfig } from '@/content/site';
-import { useSupabaseAchievements } from '@/hooks/useSupabaseAchievements';
+import { getAchievementsByCategory } from '@/content/achievements';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
 import SEO from '@/components/SEO';
 
 const Certifications = () => {
   const { lang } = useLanguage();
-  const allAchievements = useSupabaseAchievements();
-  const certs = allAchievements.filter((a) => a.category === 'certification');
-  const experiences = allAchievements.filter((a) => a.category === 'experience');
+  const certs = getAchievementsByCategory('certification');
+  const experiences = getAchievementsByCategory('experience');
 
   const t = {
     en: {
