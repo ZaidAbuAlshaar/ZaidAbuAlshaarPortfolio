@@ -42,9 +42,10 @@ const SEO = ({ title, description, path = '', ogImage }: SEOProps) => {
       <meta name="twitter:description" content={desc} />
       <meta name="twitter:image" content={imageUrl} />
 
-      {/* Alternate language */}
+      {/* Alternate language + x-default (self-referencing pairs required by Google) */}
       <link rel="alternate" hrefLang="en" href={`${siteConfig.seo.siteUrl}/en${path ? `/${path}` : ''}`} />
       <link rel="alternate" hrefLang="ar" href={`${siteConfig.seo.siteUrl}/ar${path ? `/${path}` : ''}`} />
+      <link rel="alternate" hrefLang="x-default" href={`${siteConfig.seo.siteUrl}/en${path ? `/${path}` : ''}`} />
     </Helmet>
   );
 };
