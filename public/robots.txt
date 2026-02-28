@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://zaidabualshaar.com/sitemap.xml
+Sitemap: https://zaiddev.com/sitemap.xml

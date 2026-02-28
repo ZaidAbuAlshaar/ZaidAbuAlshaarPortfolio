@@ -38,7 +38,7 @@ export const siteConfig = {
   linkedin: 'https://www.linkedin.com/in/zaid-abu-alshaar-93765a3a1/',
 
   seo: {
-    siteUrl: 'https://zaidabualshaar.com',
+    siteUrl: 'https://zaiddev.com',
     defaultTitle: 'Zaid Abu Alshaar — Full-Stack Developer & AI Specialist',
     defaultDescription: {
       en: 'Zaid Abu Alshaar — Full-Stack Developer, AI Integration Specialist, and AR/VR Creator based in Amman, Jordan. Building web apps, AI agents, and immersive experiences.',
