@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { getAchievementsByCategory } from '@/content/achievements';
+import { useSupabaseAchievements } from '@/hooks/useSupabaseAchievements';
 import MediaGallery from '@/components/MediaGallery';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
 import SEO from '@/components/SEO';
@@ -22,7 +22,8 @@ const comingSoonItems = [
 const Awards = () => {
   const { lang } = useLanguage();
   const [galleryItem, setGalleryItem] = useState<string | null>(null);
-  const awards = getAchievementsByCategory('award');
+  const achievements = useSupabaseAchievements();
+  const awards = achievements.filter((a) => a.category === 'award');
 
   const t = {
     en: {
@@ -73,6 +74,12 @@ const Awards = () => {
                 <motion.div key={item.id} {...staggerItem}>
                   <Card className="glass-border hover-lift h-full">
                     <CardContent className="p-5 space-y-2">
+                      {item.rank?.[lang] && (
+                        <span className="inline-flex items-center gap-1 text-xs font-semibold text-yellow-500 bg-yellow-500/10 px-2 py-0.5 rounded-full">
+                          <Trophy className="h-3 w-3" />
+                          {item.rank[lang]}
+                        </span>
+                      )}
                       <h4 className="font-heading text-sm font-semibold">{item.title[lang]}</h4>
                       <p className="text-xs text-muted-foreground">
                         {item.issuer[lang]} &middot; {item.year}

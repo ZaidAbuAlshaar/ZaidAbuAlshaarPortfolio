@@ -9,6 +9,11 @@ import Certifications from '@/pages/Certifications';
 import Contact from '@/pages/Contact';
 import NotFound from '@/pages/NotFound';
 import Layout from '@/components/Layout';
+import AdminGuard from '@/pages/admin/AdminGuard';
+import AdminLayout from '@/pages/admin/AdminLayout';
+import AdminDashboard from '@/pages/admin/AdminDashboard';
+import AchievementsAdmin from '@/pages/admin/achievements/AchievementsAdmin';
+import ProjectsAdmin from '@/pages/admin/projects/ProjectsAdmin';
 
 const App = () => {
   const { lang } = useLanguage();
@@ -16,6 +21,17 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigate to={`/${lang}`} replace />} />
+
+      {/* Private admin area — Supabase-Auth gated. Static "/admin" segment
+          ranks above the dynamic "/:lang" route, so it takes precedence. */}
+      <Route path="/admin" element={<AdminGuard />}>
+        <Route element={<AdminLayout />}>
+          <Route index element={<AdminDashboard />} />
+          <Route path="achievements" element={<AchievementsAdmin />} />
+          <Route path="projects" element={<ProjectsAdmin />} />
+        </Route>
+      </Route>
+
       <Route path="/:lang" element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />

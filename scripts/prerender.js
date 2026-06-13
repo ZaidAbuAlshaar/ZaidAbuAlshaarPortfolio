@@ -18,7 +18,8 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const distDir   = path.resolve(__dirname, '../dist');
-const SITE_URL  = 'https://zaiddev.com';
+const SITE_URL  = 'https://zaid.zaiddev.com';
+const OG_IMAGE  = `${SITE_URL}/images/ZaidAbuAlshaar.png`;
 
 // ---------------------------------------------------------------------------
 // Route definitions
@@ -236,10 +237,35 @@ function injectHead(html, route) {
     `$1${escapeHtml(route.description)}$2`,
   );
 
-  // 4. canonical + hreflang — inject just before </head>
+  // 4a. Strip any canonical/hreflang/OG/Twitter already present in the base
+  //     HTML so we never emit duplicate/conflicting tags (one per route only).
+  html = html
+    .replace(/[ \t]*<link rel="canonical"[^>]*>\n?/g, '')
+    .replace(/[ \t]*<link rel="alternate" hreflang=[^>]*>\n?/g, '')
+    .replace(/[ \t]*<meta property="og:[^>]*>\n?/g, '')
+    .replace(/[ \t]*<meta name="twitter:[^>]*>\n?/g, '');
+
+  // 4b. canonical + hreflang + OpenGraph/Twitter — inject just before </head>.
+  //     Static social tags are required because most share crawlers
+  //     (WhatsApp, LinkedIn, X) do not execute the client-side React/Helmet.
+  const og = [
+    `  <meta property="og:type" content="website" />`,
+    `  <meta property="og:site_name" content="Zaid Abu Alshaar" />`,
+    `  <meta property="og:locale" content="${route.lang === 'ar' ? 'ar_JO' : 'en_US'}" />`,
+    `  <meta property="og:title" content="${escapeHtml(route.title)}" />`,
+    `  <meta property="og:description" content="${escapeHtml(route.description)}" />`,
+    `  <meta property="og:url" content="${route.canonical}" />`,
+    `  <meta property="og:image" content="${OG_IMAGE}" />`,
+    `  <meta name="twitter:card" content="summary_large_image" />`,
+    `  <meta name="twitter:title" content="${escapeHtml(route.title)}" />`,
+    `  <meta name="twitter:description" content="${escapeHtml(route.description)}" />`,
+    `  <meta name="twitter:image" content="${OG_IMAGE}" />`,
+  ].join('\n');
+
   const headInject = [
     `  <link rel="canonical" href="${route.canonical}" />`,
     hreflangTags(route.hreflangPath),
+    og,
   ].join('\n');
   html = html.replace('</head>', `${headInject}\n  </head>`);
 

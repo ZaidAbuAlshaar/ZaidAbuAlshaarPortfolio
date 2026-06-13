@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/i18n/LanguageContext';
-import { projects, allTags } from '@/content/projects';
+import { useSupabaseProjects } from '@/hooks/useSupabaseProjects';
 import { handleImageError } from '@/lib/images';
 import { fadeUp, staggerContainer, staggerItem } from '@/lib/animations';
 import SEO from '@/components/SEO';
@@ -25,6 +25,7 @@ const comingSoonCategories = [
 
 const Projects = () => {
   const { lang } = useLanguage();
+  const { projects, tags: allTags } = useSupabaseProjects();
   const location = useLocation();
   const [activeTag, setActiveTag] = useState('All');
   const [search, setSearch] = useState('');
@@ -55,7 +56,7 @@ const Projects = () => {
       );
     }
     return result;
-  }, [activeTag, search, lang]);
+  }, [activeTag, search, lang, projects]);
 
   /* Show Coming Soon card if tag filter matches an empty category */
   const activeComingSoon = useMemo(() => {

@@ -14,12 +14,24 @@
     <meta name="author" content="Zaid Abu Alshaar" />
 
     <!-- Canonical (root redirects to /en; language pages override via Helmet) -->
-    <link rel="canonical" href="https://zaiddev.com/en" />
+    <link rel="canonical" href="https://zaid.zaiddev.com/en" />
 
     <!-- hreflang — tells Google about both language versions from every page -->
-    <link rel="alternate" hreflang="en" href="https://zaiddev.com/en" />
-    <link rel="alternate" hreflang="ar" href="https://zaiddev.com/ar" />
-    <link rel="alternate" hreflang="x-default" href="https://zaiddev.com/en" />
+    <link rel="alternate" hreflang="en" href="https://zaid.zaiddev.com/en" />
+    <link rel="alternate" hreflang="ar" href="https://zaid.zaiddev.com/ar" />
+    <link rel="alternate" hreflang="x-default" href="https://zaid.zaiddev.com/en" />
+
+    <!-- OpenGraph / Twitter (static fallback for share crawlers; per-route values injected at build) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Zaid Abu Alshaar" />
+    <meta property="og:title" content="Zaid Abu Alshaar — Full-Stack Developer &amp; AI Specialist" />
+    <meta property="og:description" content="Full-Stack Developer, AI Integration Specialist, and AR/VR Creator based in Amman, Jordan. Building web apps, AI agents, and immersive experiences." />
+    <meta property="og:url" content="https://zaid.zaiddev.com/en" />
+    <meta property="og:image" content="https://zaid.zaiddev.com/images/ZaidAbuAlshaar.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Zaid Abu Alshaar — Full-Stack Developer &amp; AI Specialist" />
+    <meta name="twitter:description" content="Full-Stack Developer, AI Integration Specialist, and AR/VR Creator based in Amman, Jordan." />
+    <meta name="twitter:image" content="https://zaid.zaiddev.com/images/ZaidAbuAlshaar.png" />
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -36,16 +48,16 @@
             "Zaid AbuAlshaar",
             "زيد أبوالشعر"
           ],
-          "url": "https://zaiddev.com",
-          "image": "https://zaiddev.com/images/ZaidAbuAlshaar.png",
+          "url": "https://zaid.zaiddev.com",
+          "image": "https://zaid.zaiddev.com/images/ZaidAbuAlshaar.png",
           "jobTitle": "Full-Stack Developer & AI Specialist",
           "worksFor": { "@type": "Organization", "name": "Freelance" },
           "address": { "@type": "PostalAddress", "addressLocality": "Amman", "addressCountry": "JO" },
           "email": "abualshaarzaid@gmail.com",
           "telephone": "+962799569573",
           "sameAs": [
-            "https://zaiddev.com",
-            "https://zaiddev.com/ar",
+            "https://zaid.zaiddev.com",
+            "https://zaid.zaiddev.com/ar",
             "https://python.zaiddev.com",
             "https://java.zaiddev.com",
             "https://github.com/ZaidAbuAlshaar",
@@ -68,14 +80,14 @@
           "@type": "WebSite",
           "name": "Zaid Abu Alshaar Portfolio",
           "alternateName": "زيد أبو الشعر - معرض الأعمال",
-          "url": "https://zaiddev.com",
+          "url": "https://zaid.zaiddev.com",
           "inLanguage": ["en", "ar"],
           "author": { "@type": "Person", "name": "Zaid Abu Alshaar" },
           "potentialAction": {
             "@type": "SearchAction",
             "target": {
               "@type": "EntryPoint",
-              "urlTemplate": "https://zaiddev.com/en/projects?search={search_term_string}"
+              "urlTemplate": "https://zaid.zaiddev.com/en/projects?search={search_term_string}"
             },
             "query-input": "required name=search_term_string"
           }

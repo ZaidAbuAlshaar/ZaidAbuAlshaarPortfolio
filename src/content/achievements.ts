@@ -8,13 +8,22 @@ export interface Achievement {
   year: number;
   category: 'award' | 'certification' | 'experience';
   media?: string[];
+  /** Placement, e.g. "1st Place" / "المركز الأول" (awards/competitions only). */
+  rank?: { en: string; ar: string };
+  /** Optional exact event date (ISO yyyy-mm-dd). */
+  eventDate?: string;
+  /** Optional event location. */
+  location?: { en: string; ar: string };
+  /** Optional external link (competition page / certificate). */
+  url?: string;
 }
 
 export const achievements: Achievement[] = [
   // ─── Awards & Competitions ───
   {
     id: 'award-ieee-hackathon',
-    title: { en: '1st Place — Sustainable Tech Hackathon', ar: 'المركز الأول — هاكاثون التقنيات المستدامة' },
+    title: { en: 'Sustainable Tech Hackathon', ar: 'هاكاثون التقنيات المستدامة' },
+    rank: { en: '1st Place', ar: 'المركز الأول' },
     issuer: { en: 'IEEE, Jordan', ar: 'IEEE، الأردن' },
     description: {
       en: 'Competed against top university teams across Jordan and won 1st place at the IEEE Sustainable Technology Hackathon 2025. Designed and built a working prototype that addresses real-world sustainability challenges using cutting-edge technology — recognized by IEEE judges for innovation, technical execution, and impact potential.',
@@ -30,7 +39,8 @@ export const achievements: Achievement[] = [
   },
   {
     id: 'award-palm-dates',
-    title: { en: '1st Place — Best Innovation Award (Palm & Dates Sector)', ar: 'المركز الأول — جائزة أفضل ابتكار (قطاع النخيل والتمور)' },
+    title: { en: 'Best Innovation Award — Palm & Dates Sector', ar: 'جائزة أفضل ابتكار — قطاع النخيل والتمور' },
+    rank: { en: '1st Place', ar: 'المركز الأول' },
     issuer: { en: 'National Competition, Jordan', ar: 'مسابقة وطنية، الأردن' },
     description: {
       en: 'Awarded 1st place for the Best Innovation in the Palm & Dates sector at a national competition in Jordan, 2025. Developed PalmGuard — an AI-powered pest detection system enhanced with augmented reality, providing farmers with a practical, scalable tool to combat Red Palm Weevil infestations before they cause irreversible damage.',
@@ -48,7 +58,8 @@ export const achievements: Achievement[] = [
   },
   {
     id: 'award-data-cleaning',
-    title: { en: '2nd Place — Data Cleaning Competition', ar: 'المركز الثاني — مسابقة تنظيف البيانات' },
+    title: { en: 'Data Cleaning Competition', ar: 'مسابقة تنظيف البيانات' },
+    rank: { en: '2nd Place', ar: 'المركز الثاني' },
     issuer: { en: 'IEEE, Jordan', ar: 'IEEE، الأردن' },
     description: {
       en: 'Secured 2nd place in the IEEE Data Cleaning Competition 2025, demonstrating advanced skills in data wrangling, anomaly detection, and automated preprocessing pipelines under competitive time pressure — standing out among dozens of participating teams.',
